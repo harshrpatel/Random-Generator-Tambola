@@ -2,7 +2,7 @@
     <head>
         <title>
             Lockdown Premier League 🏏
-        </title>
+        </title>   
         <meta property="og:title" content="Random Sequence Generator" />
         <meta property="og:type" content="webpage" />
         <meta property="og:url" content="https://harshrpatel.github.io/Random-Generator-Tambola/" />
@@ -23,7 +23,7 @@
         <div class="container" > 
             <div class="bigNumberDisplay well well-lg" style="margin-top: 2rem;">
                 <!-- <h3 id="numCounter" style="color:#194BB3">Getting Cricketer..</h3> -->
-                 <h3 style="color:#194BB3">Getting Cricketer..</h3>
+                 <h3 style="color:#194BB3" id="heading">Click to get player name</h3>
                 <span class="mirage" id="mirageElement">19</span>
                 <div class="bingoNumberDesc" id="bingoWords"></div>
             </div>
@@ -34,25 +34,25 @@
             <div class="row" >
                 <div  class="col-md-14"> 
                     <table>
-                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
-                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
-                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
-                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
-                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
-                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
-                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
-                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
-                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
-                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>  </tr>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+                        <tr>  <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
                     </table>
                 </div>
+            </div>
+            <div>
+            <footer>
+            <p>Developed by: Harsh & Aayushi</p>
+            </footer>
             </div> 
             <br/> 
-        </div>
-        <div>
-          <footer>
-          <p>Developed by: Harsh & Aayushi</p>
-          </footer>
         </div>
         <style type="text/css">
         body { padding-top: 70px; }
@@ -90,6 +90,7 @@
             } 
             td {
                 min-width: 100px;
+                height: 3em;
                 color: #fff;
                 font-size: 1.2em;
                 padding: 10 10 10 10;
@@ -104,6 +105,7 @@
           crossorigin="anonymous"></script>
         <script type="text/javascript">
         var bingoNumberWords = [
+  '',
   'MS Dhoni',
   'Ravindra Jadeja',
   'Suresh Raina',
@@ -243,7 +245,7 @@
 
                                 setTimeout( function() {
                                     clearInterval(interval);
-                                }, settings.duration * 1000 - settings.interval);
+                                }, settings.duration * 300 - settings.interval);
                             });
                             
                             setTimeout( function() {
@@ -251,7 +253,7 @@
                                 $("#mirageElement").css("display","none");
                                 $('#numCounter').css("display","");  
 
-                            }, settings.duration * 1000);
+                            }, settings.duration * 300);
                         });
                     }
                 });
@@ -281,10 +283,13 @@
                 };
                 $("#mirageElement").css("display","none");
                 $('td').each(function() {
-                    console.log(this);
-                    var index = this.cellIndex + 1;
-                    var concatClass = index + "" + this.parentNode.rowIndex;
-                    var numberString = parseInt(concatClass, 10).toString();
+                    if (this.parentNode.rowIndex === 9 && this.cellIndex > 0){
+                        var concatClass = this.cellIndex + "" + this.parentNode.rowIndex;
+                        var numberString = (parseInt(concatClass, 10) + 1).toString();
+                    }else{
+                        var concatClass = this.cellIndex + "" + (this.parentNode.rowIndex + 1);
+                        var numberString = parseInt(concatClass, 10).toString();
+                    }
                     $(this).addClass("cell" + numberString).text(numberString);
                 });
                 var random = 0;
@@ -297,6 +302,7 @@
                     $("#numCounter").css("display","none");
                     $("#mirageElement").css("display","");
                     $('#numCounter').text(random);
+                    $("#heading").text("Generating Name ...");
                     //$('td.cell' + random).addClass('selected');
                     $("#mirageElement").numAnim({
                         endAt: 90,
@@ -304,6 +310,7 @@
                     });
                     setTimeout(function(){ 
                         $('td.cell' + random).addClass('selected');
+                        $("#heading").text("");
                          if(bingoNumberWords[random]){
                             $("#bingoWords").text(bingoNumberWords[random]);
                         }else{
@@ -312,7 +319,7 @@
                         $("#numCounter").animate({zoom: '200%'}, "slow");
                         $("#numCounter").animate({zoom: '100%'}, "slow");
 
-                        }, animDuration*1000);
+                        }, animDuration*300);
 
                 });
                 window.onbeforeunload = function(e) {
