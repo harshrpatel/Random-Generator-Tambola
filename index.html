@@ -1,0 +1,329 @@
+<html> 
+    <head>
+        <title>
+            Lockdown Premier League 🏏
+        </title>
+        <meta property="og:title" content="Random Sequence Generator" />
+        <meta property="og:type" content="webpage" />
+        <meta property="og:url" content="https://harshrpatel.github.io/Random-Generator-Tambola/" />
+        <meta property="og:image" content="https://i.imgur.com/dYgXRJv.jpg" />   
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:locale" content="en_US" />
+    </head>
+    <body>  
+        <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+          <div class="container">
+            <div>
+                <h1 style="color:#fff">Lockdown Premier League 🏏</h1>
+            </div>
+          </div>
+        </nav> 
+        <div class="container" > 
+            <div class="bigNumberDisplay well well-lg" style="margin-top: 2rem;">
+                <!-- <h3 id="numCounter" style="color:#194BB3">Getting Cricketer..</h3> -->
+                 <h3 style="color:#194BB3">Getting Cricketer..</h3>
+                <span class="mirage" id="mirageElement">19</span>
+                <div class="bingoNumberDesc" id="bingoWords"></div>
+            </div>
+            <div>
+                <input id="btnGenerate" type="button" value="Generate Name"/>
+            </div> 
+            <br/> 
+            <div class="row" >
+                <div  class="col-md-14"> 
+                    <table>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
+                    </table>
+                </div>
+            </div> 
+            <br/> 
+        </div>
+        <div>
+          <footer>
+          <p>Developed by: Harsh & Aayushi</p>
+          </footer>
+        </div>
+        <style type="text/css">
+        body { padding-top: 70px; }
+            .divRules{
+                float:left;
+                width:20%;
+                text-align:left;
+                font-size:20px;
+            }
+            #prevNum{
+                font-size:90px;
+                color:#f00;
+            }
+            .bingoNumberDesc{
+                font-size:0.3em;
+                vertical-align: text-top;
+            }
+           div {
+                text-align: center;
+            } 
+            .bigNumberDisplay {
+                font-size: 8em;
+            } 
+            .numbersTable {
+                font-size: 1.6em;
+                width:100%
+            } 
+            table {
+                margin-left: auto;
+                margin-right: auto;
+            } 
+            table, tr, td {
+                border-collapse: collapse;
+                border: solid 1px #999;
+            } 
+            td {
+                min-width: 100px;
+                color: #fff;
+                font-size: 1.2em;
+                padding: 10 10 10 10;
+            } 
+            td.selected {
+                color: chocolate;
+            } 
+        </style> 
+        <script
+          src="https://code.jquery.com/jquery-3.2.1.min.js"
+          integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+          crossorigin="anonymous"></script>
+        <script type="text/javascript">
+        var bingoNumberWords = [
+  'MS Dhoni',
+  'Ravindra Jadeja',
+  'Suresh Raina',
+  'Kedar Jadhav',
+  'Dwayne Bravo',
+  'Karn Sharma',
+  'Shane Watson',
+  'Shardul Narendra Thakur',
+  'Ambati Rayudu',
+  'Murali Vijay',
+  'Harbhajan Singh',
+  'Faf Du Plessis',
+  'Mark Wood',
+  'Sam Billings',
+  'Imran Tahir',
+  'Deepak Chahar',
+  'Mitchell Santner',
+  'Lungisani Ngidi',
+  'Asif K M',
+  'N Jagadeesan',
+  'Kanishk Seth',
+  'Monu Singh',
+  'Dhruv Shorey',
+  'Kshitiz Sharma',
+  'Chaitanya Bishnoi',
+  'Steve Smith',
+  'Benjamin Stokes',
+  'Jaydev Unadkat',
+  'Sanju Samson',
+  'Jofra Archer',
+  'Krishnappa Gowtham',
+  'Jos Buttler',
+  'Ajinkya Rahane',
+  'Darcy Short',
+  'Rahul Tripathi',
+  'Dhawal Kulkarni',
+  'Zahir Khan Pakteen',
+  'Ben Laughlin',
+  'Stuart Binny',
+  'Dushmantha Chameera',
+  'Anureet Singh',
+  'Aryaman Vikram Birla',
+  'Midhun S',
+  'Shreyas Gopal',
+  'Prashant Chopra',
+  'Jatin Saxena',
+  'Ankit Sharma',
+  'Mahipal Lomror',
+  'Rohit Sharma',
+  'Jasprit Bumrah',
+  'Hardik Pandya',
+  'Krunal Pandya',
+  'Ishan Kishan',
+  'Kieron Pollard',
+  'Pat Cummins',
+  'Evin Lewis',
+  'Suryakumar Yadav',
+  'Ben Cutting',
+  'Mustafizur Rahman',
+  'Rahul Chahar',
+  'Pradeep Sangwan',
+  'Jason Behrendorff',
+  'Jean-Paul Duminy',
+  'Saurabh Tiwary',
+  'Tajinder Dhillon Singh',
+  'Akila Dhananjaya',
+  'Nidheesh M D Dinesan',
+  'Aditya Tare',
+  'Siddhesh Dinesh Lad',
+  'Mayank Markande',
+  'Sharad Lumba',
+  'Anukul Roy',
+  'Mohsin Khan',
+  'David Warner',
+  'Bhuvaneshwar Kumar',
+  'Manish Pandey',
+  'Rashid Khan Arman',
+  'Shikhar Dhawan',
+  'Wriddhiman Saha',
+  'Siddarth Kaul',
+  'Deepak Hooda',
+  'Syed Khaleel Ahmed',
+  'Sandeep Sharma',
+  'Kane Williamson',
+  'Carlos Brathwaite',
+  'Shakib Al Hasan',
+  'Yusuf Pathan',
+  'Shreevats Goswami',
+  'Mohammad Nabi',
+  'Chris Jordan'
+];
+            (function($){
+                $.fn.extend({
+                    numAnim: function(options) {
+                        if ( ! this.length)
+                            return false;
+
+                        this.defaults = {
+                            endAt: 2560,
+                            numClass: 'autogen-num',
+                            duration: 1,   // seconds
+                            interval: 60  // ms
+                        };
+                        var settings = $.extend({}, this.defaults, options);
+
+                        var $num = $('<span/>', {
+                            'class': settings.numClass 
+                        });
+
+                        return this.each(function() {
+                            var $this = $(this);
+
+                            // Wrap each number in a tag.
+                            var frag = document.createDocumentFragment(),
+                                numLen = settings.endAt.toString().length;
+                            for (x = 0; x < numLen; x++) {
+                                var rand_num = Math.floor( Math.random() * 10 );
+                                frag.appendChild( $num.clone().text(rand_num)[0] )
+                            }
+                            $this.empty().append(frag);
+
+                            var get_next_num = function(num) {
+                                ++num;
+                                if (num > 9) return 0;
+                                return num;
+                            };
+
+                            // Iterate each number.
+                            $this.find('.' + settings.numClass).each(function() {
+                                var $num = $(this),
+                                    num = parseInt( $num.text() );
+
+                                var interval = setInterval( function() {
+                                    num = get_next_num(num);
+                                    $num.text(num);
+                                }, settings.interval);
+
+                                setTimeout( function() {
+                                    clearInterval(interval);
+                                }, settings.duration * 1000 - settings.interval);
+                            });
+                            
+                            setTimeout( function() {
+                                $this.text( settings.endAt.toString() );
+                                $("#mirageElement").css("display","none");
+                                $('#numCounter').css("display","");  
+
+                            }, settings.duration * 1000);
+                        });
+                    }
+                });
+            })(jQuery);
+
+                $(function() { 
+                var bingo = {
+                    selectedNumbers: [],
+                    generateRandom: function() {
+                        var min = 1;
+                        var max = 90;
+                        var random = Math.floor(Math.random() * (max - min + 1)) + min;
+                        return random;
+                    },
+                    generateNextRandom: function() {
+                        if (bingo.selectedNumbers.length > 89) {
+                            alert("All numbers Exhausted");
+                            return 0;
+                        }
+                        var random = bingo.generateRandom();
+                        while ($.inArray(random, bingo.selectedNumbers) > -1) {
+                            random = bingo.generateRandom();
+                        }
+                        bingo.selectedNumbers.push(random);
+                        return random;
+                    }
+                };
+                $("#mirageElement").css("display","none");
+                $('td').each(function() {
+                    console.log(this);
+                    var index = this.cellIndex + 1;
+                    var concatClass = index + "" + this.parentNode.rowIndex;
+                    var numberString = parseInt(concatClass, 10).toString();
+                    $(this).addClass("cell" + numberString).text(numberString);
+                });
+                var random = 0;
+                var animDuration = 1;
+                $('#btnGenerate').click(function() {    
+                    $("#bingoWords").text("");
+                    $('#prevNum').text($('#numCounter').text());
+                    random = bingo.generateNextRandom().toString();
+                    $('td.cell' + random).text(bingoNumberWords[random]);
+                    $("#numCounter").css("display","none");
+                    $("#mirageElement").css("display","");
+                    $('#numCounter').text(random);
+                    //$('td.cell' + random).addClass('selected');
+                    $("#mirageElement").numAnim({
+                        endAt: 90,
+                        duration: animDuration
+                    });
+                    setTimeout(function(){ 
+                        $('td.cell' + random).addClass('selected');
+                         if(bingoNumberWords[random]){
+                            $("#bingoWords").text(bingoNumberWords[random]);
+                        }else{
+                            $("#bingoWords").text("");
+                        }
+                        $("#numCounter").animate({zoom: '200%'}, "slow");
+                        $("#numCounter").animate({zoom: '100%'}, "slow");
+
+                        }, animDuration*1000);
+
+                });
+                window.onbeforeunload = function(e) {
+                    e = e || window.event;
+                    var returnString = 'Are you sure?';
+                    if (e) {
+                        e.returnValue = returnString;
+                    }
+                    return returnString;
+                };
+            });
+        </script> 
+    </body>
+</html>
