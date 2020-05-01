@@ -2,9 +2,15 @@
     <head>
         <title>
             🎬 Bollywood Cinema Housie 🎬
-        </title>   
+        </title> 
+        <meta property="og:title" content="Random Sequence Generator - Bollywood" />  
+        <meta property="og:type" content="webpage" />
+        <meta property="og:url" content="https://harshrpatel.github.io/Random-Generator-Tambola/bollywood" />
+        <meta property="og:image" content="https://i.imgur.com/dYgXRJv.jpg" />
+<!--         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+ -->        <meta charset="UTF-8">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> 
-        <meta charset="UTF-8">
+
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta property="og:locale" content="en_US" />
     </head>
@@ -12,19 +18,19 @@
         <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
           <div class="container">
             <div>
-                <h1 style="color:#fff">🎬 Bollywood Cinema Housie 🎬</h1>
+                <h1 style="color:#fff">🎬 Bollywood Cinema Housie 🎬</h1> 
             </div>
           </div>
         </nav> 
         <div class="container" > 
-            <div class="bigNumberDisplay well well-lg" style="margin-top: 2rem;">
+            <div class="bigNumberDisplay well well-lg" style="margin-top: 2rem; background-color: #FCF3DE; border: solid 3px;">
                 <!-- <h3 id="numCounter" style="color:#194BB3">Getting Cricketer..</h3> -->
-                 <h3 style="color:#194BB3" id="heading">Click below to get artist</h3>
+                 <h3 style="color:#C60000" id="heading">Click below to get artist</h3>
                 <span class="mirage" id="mirageElement">19</span>
                 <div class="bingoNumberDesc" id="bingoWords"></div>
             </div>
             <div>
-                <input id="btnGenerate" type="button"  class="btn btn-primary btn-lg" value="Generate Name"/>
+                <input id="btnGenerate" type="button"  style="background-color: #35393F; color: #FDBA6B;" class="btn btn-primary btn-lg" value="Generate Name"/>
             </div> 
             <br/> 
             <div class="row" >
@@ -45,9 +51,16 @@
             </div> 
             <br/> 
         </div>
+        <div>
+        <footer>
+        <p>Developed by: Harsh & Aayushi</p>
+        </footer>
+        </div> 
         <style type="text/css">
         body { 
             padding-top: 70px;
+            background-image: url(https://i.imgur.com/td8fCli.png);
+            background-repeat: round;
         }
             .divRules{
                 float:left;
@@ -89,6 +102,7 @@
                 vertical-align: middle !important;
                 text-align: center;
                 background-color: #151511;
+                color: #FEEEBC;
             } 
             td.selected {
                 color: #F3AF72;
