@@ -1,7 +1,7 @@
 <html> 
     <head>
         <title>
-            🎬 Bollywood Cinema Housie 🎬
+             🏆 Filmfare Awards 🏆
         </title> 
         <meta property="og:title" content="Random Sequence Generator - Bollywood" />  
         <meta property="og:type" content="webpage" />
@@ -18,7 +18,7 @@
         <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
           <div class="container">
             <div>
-                <h1 style="color:#fff">🎬 Bollywood Cinema Housie 🎬</h1> 
+                <h1 style="color:#fff"> 🏆 Filmfare Awards 🏆</h1> 
             </div>
           </div>
         </nav> 
@@ -26,6 +26,7 @@
             <div class="bigNumberDisplay well well-lg" style="margin-top: 2rem; background-color: #FCF3DE; border: solid 3px;">
                 <!-- <h3 id="numCounter" style="color:#194BB3">Getting Cricketer..</h3> -->
                  <h3 style="color:#C60000" id="heading">Click below to get artist</h3>
+                <!-- <h3 style="color:#C60000" id="selectedLeft"></h3> -->
                 <span class="mirage" id="mirageElement">19</span>
                 <div class="bingoNumberDesc" id="bingoWords"></div>
             </div>
@@ -86,6 +87,9 @@
                 font-size:0.3em;
                 vertical-align: text-top;
             }
+            button.list-group-item:hover {
+              background-color: black !important;
+            }
            div {
                 text-align: center;
             } 
@@ -99,7 +103,8 @@
             .list-group-item {
                 background-color: #151511;
                 color: #FEEEBC !important;
-                font-size: 1.2em;
+                font-size: 1.5em;
+                padding-bottom: 2em;
                 height: 4rem;
             }
             table {
@@ -211,9 +216,10 @@
                         return random;
                     },
                     generateNextRandom: function() {
-                        // if (window.localStorage.getItem('selected_names')){
-                        //      bingo.selectedNumbers = window.localStorage.getItem('selected_names').split(',');
-                        // }
+                        if (window.localStorage.getItem('selected_names')){
+                             var getStorage = window.localStorage.getItem('selected_names').split(',');
+                             bingo.selectedNumbers = getStorage.map(Number);
+                        }
                         if (bingo.selectedNumbers.length > 89) {
                             alert("All numbers Exhausted");
                             return 0;
@@ -223,7 +229,7 @@
                             random = bingo.generateRandom();
                         }
                         bingo.selectedNumbers.push(random);
-                        // window.localStorage.setItem('selected_names', bingo.selectedNumbers);
+                        window.localStorage.setItem('selected_names', bingo.selectedNumbers);
                         return random;
                     }
                 };
@@ -238,12 +244,12 @@
                     }
                     $(this).addClass("cell" + numberString.toString()).text(bingoNumberWords[numberString]);
                 });
-                // if (window.localStorage.getItem('selected_names')){
-                    // var selectedArray = window.localStorage.getItem('selected_names').split(',');
-                    // for (var i = 0; i < selectedArray.length; i++) {
-                        // $('td.cell' + selectedArray[i]).addClass('selected');
-                    // }
-                // }
+                if (window.localStorage.getItem('selected_names')){
+                    var selectedArray = window.localStorage.getItem('selected_names').split(',');
+                    for (var i = 0; i < selectedArray.length; i++) {
+                        $('td.cell' + selectedArray[i]).addClass('selected');
+                    }
+                }
                 var random = 0;
                 var animDuration = 1;
                 $('#btnGenerate').click(function() {    
@@ -256,8 +262,8 @@
                     } else{
                         last5call.unshift(bingoNumberWords[random]);
                     }
-                     for (var i = 0; i <= last5call.length; i++) {
-                         if (last5call[i]){
+                    for (var i = 0; i <= last5call.length; i++) {
+                        if (last5call[i]){
                             document.getElementById("lastCall" + i).innerHTML = (i+1) + ')' + ' ' + last5call[i];
                         }
                     }
@@ -273,6 +279,8 @@
                     });
                     setTimeout(function(){ 
                         $('td.cell' + random).addClass('selected');
+                        var numbers = document.getElementsByClassName('selected');
+                        // $("#selectedLeft").text("selected numbers left" + "   " + ((bingoNumberWords.length - 1) - numbers.length));
                         $("#heading").text("");
                          if(bingoNumberWords[random]){
                             $("#bingoWords").text(bingoNumberWords[random]);
