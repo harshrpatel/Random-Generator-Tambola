@@ -1,16 +1,10 @@
 <html> 
     <head>
         <title>
-            Lockdown Premier League 🏏
+            🎬 Bollywood Cinema Housie 🎬
         </title>   
-        <meta property="og:title" content="Random Sequence Generator" />
-        <meta property="og:type" content="webpage" />
-        <meta property="og:url" content="https://harshrpatel.github.io/Random-Generator-Tambola/" />
-        <meta property="og:image" content="https://i.imgur.com/dYgXRJv.jpg" />
-<!--         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
- -->        <meta charset="UTF-8">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> 
-
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta property="og:locale" content="en_US" />
     </head>
@@ -18,24 +12,24 @@
         <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
           <div class="container">
             <div>
-                <h1 style="color:#fff">🏏 Lockdown Premier League 🏏</h1>
+                <h1 style="color:#fff">🎬 Bollywood Cinema Housie 🎬</h1>
             </div>
           </div>
         </nav> 
         <div class="container" > 
             <div class="bigNumberDisplay well well-lg" style="margin-top: 2rem;">
                 <!-- <h3 id="numCounter" style="color:#194BB3">Getting Cricketer..</h3> -->
-                 <h3 style="color:#194BB3" id="heading">Click to get Player</h3>
+                 <h3 style="color:#194BB3" id="heading">Click below to get artist</h3>
                 <span class="mirage" id="mirageElement">19</span>
                 <div class="bingoNumberDesc" id="bingoWords"></div>
             </div>
             <div>
-                <input id="btnGenerate" type="button" value="Generate Name"/>
+                <input id="btnGenerate" type="button"  class="btn btn-primary btn-lg" value="Generate Name"/>
             </div> 
             <br/> 
             <div class="row" >
-                <div  class="col-md-14"> 
-                    <table>
+                <div  class="col-md-16"> 
+                    <table class="table table-striped table-responsive">
                         <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
                         <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>  </tr>
                         <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
@@ -51,13 +45,10 @@
             </div> 
             <br/> 
         </div>
-        <div>
-        <footer>
-        <p>Developed by: Harsh & Aayushi</p>
-        </footer>
-        </div> 
         <style type="text/css">
-        body { padding-top: 70px; }
+        body { 
+            padding-top: 70px;
+        }
             .divRules{
                 float:left;
                 width:20%;
@@ -80,7 +71,7 @@
             } 
             .numbersTable {
                 font-size: 1.6em;
-                width:100%
+                width:100%;
             } 
             table {
                 margin-left: auto;
@@ -93,112 +84,29 @@
             td {
                 min-width: 100px;
                 height: 3em;
-                color: chocolate;
                 font-size: 1.2em;
-                padding: 10 10 10 10;
+                padding: 10 10 10 10 !important;
+                vertical-align: middle !important;
+                text-align: center;
+                background-color: #151511;
             } 
             td.selected {
-                color: blue;
+                color: #F3AF72;
+                font-weight: 600;
+                background-color: #c30101;
             } 
+            @media (min-width: 1000px){
+                .container {
+                    width: 1400px !important;
+                }
+            }
         </style> 
         <script
           src="https://code.jquery.com/jquery-3.2.1.min.js"
           integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
           crossorigin="anonymous"></script>
         <script type="text/javascript">
-        var bingoNumberWords = [
-              '',
-              'MS Dhoni',
-              'Ravindra Jadeja',
-              'Suresh Raina',
-              'Kedar Jadhav',
-              'Dwayne Bravo',
-              'Karn Sharma',
-              'Shane Watson',
-              'Shardul Narendra Thakur',
-              'Ambati Rayudu',
-              'Murali Vijay',
-              'Harbhajan Singh',
-              'Faf Du Plessis',
-              'Mark Wood',
-              'Sam Billings',
-              'Imran Tahir',
-              'Deepak Chahar',
-              'Mitchell Santner',
-              'Lungisani Ngidi',
-              'Asif K M',
-              'N Jagadeesan',
-              'Kanishk Seth',
-              'Monu Singh',
-              'Dhruv Shorey',
-              'Kshitiz Sharma',
-              'Chaitanya Bishnoi',
-              'Steve Smith',
-              'Benjamin Stokes',
-              'Jaydev Unadkat',
-              'Sanju Samson',
-              'Jofra Archer',
-              'Krishnappa Gowtham',
-              'Jos Buttler',
-              'Ajinkya Rahane',
-              'Darcy Short',
-              'Rahul Tripathi',
-              'Dhawal Kulkarni',
-              'Zahir Khan Pakteen',
-              'Ben Laughlin',
-              'Stuart Binny',
-              'Dushmantha Chameera',
-              'Anureet Singh',
-              'Aryaman Vikram Birla',
-              'Midhun S',
-              'Shreyas Gopal',
-              'Prashant Chopra',
-              'Jatin Saxena',
-              'Ankit Sharma',
-              'Mahipal Lomror',
-              'Rohit Sharma',
-              'Jasprit Bumrah',
-              'Hardik Pandya',
-              'Krunal Pandya',
-              'Ishan Kishan',
-              'Kieron Pollard',
-              'Pat Cummins',
-              'Evin Lewis',
-              'Suryakumar Yadav',
-              'Ben Cutting',
-              'Mustafizur Rahman',
-              'Rahul Chahar',
-              'Pradeep Sangwan',
-              'Jason Behrendorff',
-              'Jean-Paul Duminy',
-              'Saurabh Tiwary',
-              'Tajinder Dhillon Singh',
-              'Akila Dhananjaya',
-              'Nidheesh M D Dinesan',
-              'Aditya Tare',
-              'Siddhesh Dinesh Lad',
-              'Mayank Markande',
-              'Sharad Lumba',
-              'Anukul Roy',
-              'Mohsin Khan',
-              'David Warner',
-              'Bhuvaneshwar Kumar',
-              'Manish Pandey',
-              'Rashid Khan Arman',
-              'Shikhar Dhawan',
-              'Wriddhiman Saha',
-              'Siddarth Kaul',
-              'Deepak Hooda',
-              'Syed Khaleel Ahmed',
-              'Sandeep Sharma',
-              'Kane Williamson',
-              'Carlos Brathwaite',
-              'Shakib Al Hasan',
-              'Yusuf Pathan',
-              'Shreevats Goswami',
-              'Mohammad Nabi',
-              'Chris Jordan'
-            ];
+        var bingoNumberWords = ["", "Amitabh Bachchan", "Salman Khan", "Sharukh Khan",  "Hrithik Roshan", "Aamir Khan",  "Ranbir Kapoor",  "Ranveer Singh", "Shahid Kapoor", "Varun Dhawan", "Abhishek Bachchan",  "Rishi Kapoor",  "Dharmendra", "Rajesh Khanna", "Kartik Aaryan", "Saif Ali Khan",  "Tiger Shroff",  "Akshay Kumar", "Sanjay Dutt", "Ajay Devgan", "Govinda",  "Aishwarya Rai",  "Kareena Kapoor", "Karishma Kapoor", "Alia Bhatt", "Anushka Sharma",  "Sonam Kapoor",  "Kajol", "Priyanka Chopra", "Sara Ali Khan", "Sridevi",  "Madhuri Dixit",  "Hema Malini", "Rekha", "Zeenat Aman", "Katrina Kaif",  "Rani Mukherjee",  "Shilpa Shetty", "Deepika Padukone", "Jacqueline Fernandez", "Madhubala",  "Sholay",  "Dilwale dulhania le jayenge", "Lagaan", "Dil to pagal hai", "Anand",  "Hum apke hai kaun",  "3 Idiots", "Mr. India", "Singham", "Andaz Apna Apna",  "Amrish Puri",  "Shakti Kapoor", "Ranjit", "Amjad Khan", "Ajit",  "Prem Chopra",  "Danny Denzogpa", "Mukesh Tiwari", "Ashutosh Rana", "Prakash Raj",  "Raj Kapoor",  "Karan Johar", "Sooraj Barjatya", "Rajkumar Hirani", "Rohit Shetty",  "Imtiaz Ali",  "Sanjay Leela Bhansali", "Zoya Akhtar", "Subhash Ghai", "Yash Chopra",  "Arijit Singh",  "Udit Narayan", "Lata Mangeshkar", "Alka Yagnik", "Shreya Ghoshal",  "Sonu Nigam",  "Kishore Kumar", "Shaan", "K.K (Krishnakumar Kunnath)", "S.P. Balasubrahmanyam",  "R.D Burman",  "Laxmikant Pyarelal", "Pritam", "Sachin Jigar", "Amit Trivedi",  "Vishal Shekhar",  "Himesh Reshammiya", "A.R. Rehman", "Jatin Lalit", "Salim Sulaiman"];
             bingoNumberWords.sort();
             console.log('sort', bingoNumberWords);
             (function($){
@@ -289,7 +197,7 @@
                 $('td').each(function() {
                     if (this.parentNode.rowIndex === 9 && this.cellIndex > 0){
                         var concatClass = this.cellIndex + "" + this.parentNode.rowIndex;
-                        var numberString = (parseInt(concatClass, 10) + 1);
+                        var numberString = (parseInt(concatClass, 10) + 1).toString();
                     }else{
                         var concatClass = this.cellIndex + "" + (this.parentNode.rowIndex + 1);
                         var numberString = parseInt(concatClass, 10);
@@ -306,7 +214,7 @@
                     $("#numCounter").css("display","none");
                     $("#mirageElement").css("display","");
                     $('#numCounter').text(random);
-                    $("#heading").text("Generating Name ...");
+                    $("#heading").text("Revealing Artist ...");
                     //$('td.cell' + random).addClass('selected');
                     $("#mirageElement").numAnim({
                         endAt: 90,
