@@ -48,6 +48,16 @@
                         <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
                     </table>
                 </div>
+                <div class="col-md-16" style="margin-left: 2rem">
+                    <h2 style="float: left; margin-top: 2rem">Last 5 artists called:</h2>
+                    <div class="list-group" style="width: 30rem">
+                        <button id ="lastCall0" type="button" class="list-group-item"></button>
+                        <button id ="lastCall1" type="button" class="list-group-item"></button>
+                        <button id ="lastCall2" type="button" class="list-group-item"></button>
+                        <button id ="lastCall3" type="button" class="list-group-item"></button>
+                        <button id ="lastCall4" type="button" class="list-group-item"></button>
+                    </div>
+                </div>
             </div> 
             <br/> 
         </div>
@@ -86,6 +96,12 @@
                 font-size: 1.6em;
                 width:100%;
             } 
+            .list-group-item {
+                background-color: #151511;
+                color: #FEEEBC !important;
+                font-size: 1.2em;
+                height: 4rem;
+            }
             table {
                 margin-left: auto;
                 margin-right: auto;
@@ -122,7 +138,7 @@
         <script type="text/javascript">
         var bingoNumberWords = ["", "Amitabh Bachchan", "Salman Khan", "Sharukh Khan",  "Hrithik Roshan", "Aamir Khan",  "Ranbir Kapoor",  "Ranveer Singh", "Shahid Kapoor", "Varun Dhawan", "Abhishek Bachchan",  "Rishi Kapoor",  "Dharmendra", "Rajesh Khanna", "Kartik Aaryan", "Saif Ali Khan",  "Tiger Shroff",  "Akshay Kumar", "Sanjay Dutt", "Ajay Devgan", "Govinda",  "Aishwarya Rai",  "Kareena Kapoor", "Karishma Kapoor", "Alia Bhatt", "Anushka Sharma",  "Sonam Kapoor",  "Kajol", "Priyanka Chopra", "Sara Ali Khan", "Sridevi",  "Madhuri Dixit",  "Hema Malini", "Rekha", "Zeenat Aman", "Katrina Kaif",  "Rani Mukherjee",  "Shilpa Shetty", "Deepika Padukone", "Jacqueline Fernandez", "Madhubala",  "Sholay",  "Dilwale dulhania le jayenge", "Lagaan", "Dil to pagal hai", "Anand",  "Hum apke hai kaun",  "3 Idiots", "Mr. India", "Singham", "Andaz Apna Apna",  "Amrish Puri",  "Shakti Kapoor", "Ranjit", "Amjad Khan", "Ajit",  "Prem Chopra",  "Danny Denzogpa", "Mukesh Tiwari", "Ashutosh Rana", "Prakash Raj",  "Raj Kapoor",  "Karan Johar", "Sooraj Barjatya", "Rajkumar Hirani", "Rohit Shetty",  "Imtiaz Ali",  "Sanjay Leela Bhansali", "Zoya Akhtar", "Subhash Ghai", "Yash Chopra",  "Arijit Singh",  "Udit Narayan", "Lata Mangeshkar", "Alka Yagnik", "Shreya Ghoshal",  "Sonu Nigam",  "Kishore Kumar", "Shaan", "K.K (Krishnakumar Kunnath)", "S.P. Balasubrahmanyam",  "R.D Burman",  "Laxmikant Pyarelal", "Pritam", "Sachin Jigar", "Amit Trivedi",  "Vishal Shekhar",  "Himesh Reshammiya", "A.R. Rehman", "Jatin Lalit", "Salim Sulaiman"];
             bingoNumberWords.sort();
-            console.log('sort', bingoNumberWords);
+            var last5call = [];
             (function($){
                 $.fn.extend({
                     numAnim: function(options) {
@@ -195,6 +211,9 @@
                         return random;
                     },
                     generateNextRandom: function() {
+                        if (window.localStorage.getItem('selected_names')){
+                             bingo.selectedNumbers = window.localStorage.getItem('selected_names').split(',');
+                        }
                         if (bingo.selectedNumbers.length > 89) {
                             alert("All numbers Exhausted");
                             return 0;
@@ -204,6 +223,7 @@
                             random = bingo.generateRandom();
                         }
                         bingo.selectedNumbers.push(random);
+                        window.localStorage.setItem('selected_names', bingo.selectedNumbers);
                         return random;
                     }
                 };
@@ -218,12 +238,29 @@
                     }
                     $(this).addClass("cell" + numberString.toString()).text(bingoNumberWords[numberString]);
                 });
+                if (window.localStorage.getItem('selected_names')){
+                    var selectedArray = window.localStorage.getItem('selected_names').split(',');
+                    for (var i = 0; i < selectedArray.length; i++) {
+                        $('td.cell' + selectedArray[i]).addClass('selected');
+                    }
+                }
                 var random = 0;
                 var animDuration = 1;
                 $('#btnGenerate').click(function() {    
                     $("#bingoWords").text("");
                     $('#prevNum').text($('#numCounter').text());
                     random = bingo.generateNextRandom().toString();
+                    if(last5call.length == 5){
+                        last5call.pop();
+                        last5call.unshift(bingoNumberWords[random]);
+                    } else{
+                        last5call.unshift(bingoNumberWords[random]);
+                    }
+                     for (var i = 0; i <= last5call.length; i++) {
+                         if (last5call[i]){
+                            document.getElementById("lastCall" + i).innerHTML = (i+1) + ')' + ' ' + last5call[i];
+                        }
+                    }
                     $('td.cell' + random).text(bingoNumberWords[random]);
                     $("#numCounter").css("display","none");
                     $("#mirageElement").css("display","");
