@@ -68,16 +68,21 @@
         </footer>
         </div> 
         <style type="text/css">
-        body { 
-            padding-top: 70px;
-            background-image: url(https://i.imgur.com/td8fCli.png);
-            background-repeat: round;
-        }
+            body { 
+                padding-top: 70px;
+                background-image: url(https://i.imgur.com/td8fCli.png);
+                background-repeat: round;
+            }
             .divRules{
                 float:left;
                 width:20%;
                 text-align:left;
                 font-size:20px;
+            }
+            .highlight{
+                border: solid 6px gold;
+                border-top: solid 6px gold !important;
+                color: gold !important;
             }
             #prevNum{
                 font-size:90px;
@@ -218,7 +223,8 @@
                     generateNextRandom: function() {
                         if (window.localStorage.getItem('selected_names')){
                              var getStorage = window.localStorage.getItem('selected_names').split(',');
-                             bingo.selectedNumbers = getStorage.map(Number);
+                             bingo.selectedNumbers = getStorage.map(Number)
+                             console.log('lengthhh', bingo.selectedNumbers);
                         }
                         if (bingo.selectedNumbers.length > 89) {
                             alert("All numbers Exhausted");
@@ -226,6 +232,7 @@
                         }
                         var random = bingo.generateRandom();
                         while ($.inArray(random, bingo.selectedNumbers) > -1) {
+                            console.log('dup found');
                             random = bingo.generateRandom();
                         }
                         bingo.selectedNumbers.push(random);
@@ -254,6 +261,10 @@
                 var animDuration = 1;
                 $('#btnGenerate').click(function() {    
                     $("#bingoWords").text("");
+                    var elems = document.querySelectorAll(".highlight");
+                    [].forEach.call(elems, function(el) {
+                        el.classList.remove("highlight");
+                    })
                     $('#prevNum').text($('#numCounter').text());
                     random = bingo.generateNextRandom().toString();
                     if(last5call.length == 5){
@@ -278,7 +289,7 @@
                         duration: animDuration
                     });
                     setTimeout(function(){ 
-                        $('td.cell' + random).addClass('selected');
+                        $('td.cell' + random).addClass('selected highlight');
                         var numbers = document.getElementsByClassName('selected');
                         // $("#selectedLeft").text("selected numbers left" + "   " + ((bingoNumberWords.length - 1) - numbers.length));
                         $("#heading").text("");
