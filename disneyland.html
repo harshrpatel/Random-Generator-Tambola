@@ -151,12 +151,26 @@
             } 
             @media (min-width: 1000px){
                 .container {
-                    width: 1300px !important; 
+                    width: 1250px !important; 
+                }
+                body{
+                     zoom: 0.75;
                 }
             }
-             @media (max-width: 800px){
+             @media (max-width: 500px){
                 .container {
-                    width: 1080px !important; 
+                    width: 1280px !important; 
+                }
+                body{
+                     zoom: 0.4;
+                }
+            }
+            @media (min-width: 750px) and (max-width: 999px){
+                .container {
+                    width: 1280px !important; 
+                }
+                body {
+                    zoom: 0.59;
                 }
             }
         </style> 
@@ -282,7 +296,7 @@
                 confetti.maxCount = 1100;     //set max confetti count
                 confetti.speed = 3.5; //set confetti speed
                 $('#btnReset').click(function() {
-                    var r = confirm("Are you sure you want to reload the board");
+                    var r = confirm("Are you sure you want to reload the board ?");
                     if (r == true) {
                         if (window.localStorage.getItem('selected_names')){
                             window.localStorage.removeItem('selected_names');
