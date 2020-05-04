@@ -148,7 +148,7 @@
                 font-weight: 600;
                 background-color: #734F96;
             } 
-            @media only screen and (min-width: 1400px){
+           /* @media only screen and (min-width: 1400px){
                 .container {
                     width: 1250px !important; 
                 }
@@ -156,7 +156,7 @@
             @media only screen and (min-width: 768px) {
                .container {
                     width: 850px !important; 
-                }
+                }*/
               /*  .board{
                     -ms-transform-origin: 0 0;
                     -webkit-transform-origin: 0 0;
@@ -165,7 +165,7 @@
                     -webkit-transform: scaleX(0.9) scaleY(1.0);
                     transform: scaleX(0.9) scaleY(1.0);
                 }*/
-            }
+            /*}*/
         </style> 
         <script
           src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -267,6 +267,13 @@
                         return random;
                     }
                 };
+                if (/iPhone|iPod/.test(navigator.platform)) {
+                    $(".container").css("width","900px !important");
+                } else if  (/iPad/.test(navigator.platform)) {
+                     $(".container").css("width","1220px !important");
+                } else {
+                     $(".container").css("width","1250px !important");
+                }
                 $("#mirageElement").css("display","none");
                 $('td').each(function() {
                     if (this.parentNode.rowIndex === 9 && this.cellIndex > 0){
