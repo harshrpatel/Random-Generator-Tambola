@@ -10,8 +10,7 @@
         <meta property="og:image" content="https://i.imgur.com/dYgXRJv.jpg" />
         <meta charset="UTF-8">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> 
-
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <meta name="viewport" content="width=device-width, user-scalable=no"> -->
         <meta property="og:locale" content="en_US" />
     </head>
     <body>  
@@ -22,7 +21,7 @@
             </div>
           </div>
         </nav> 
-        <div class="container" > 
+        <div class="container board" > 
             <div class="bigNumberDisplay well well-lg" style="margin-top: 2rem; background-color: #734F96; border: solid 3px;">
                 <!-- <h3 id="numCounter" style="color:#194BB3">Getting Cricketer..</h3> -->
                  <h3 style="color:#EAD1DC" id="heading">Click below to get your dream attraction</h3>
@@ -149,20 +148,22 @@
                 font-weight: 600;
                 background-color: #734F96;
             } 
-            @media (min-width: 1000px){
+            @media only screen and (min-width: 1000px){
                 .container {
                     width: 1250px !important; 
                 }
-                body{
-                     zoom: 0.75;
-                }
             }
-             @media (max-width: 800px){
-                .container {
-                    width: 1080px !important; 
+            @media only screen and (min-width: 768px) {
+               .container {
+                    width: 1280px !important; 
                 }
-                body{
-                     zoom: 0.6;
+                .board{
+                    -ms-transform-origin: 0 0;
+                    -webkit-transform-origin: 0 0;
+                    transform-origin: 0 0;
+                    -ms-transform: scaleX(0.9) scaleY(1.0);
+                    -webkit-transform: scaleX(0.9) scaleY(1.0);
+                    transform: scaleX(0.9) scaleY(1.0);
                 }
             }
         </style> 
