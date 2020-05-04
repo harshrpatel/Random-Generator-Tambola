@@ -30,6 +30,12 @@
         <div class="section-container margin-top-mid hidden-shadow confetti">
 
 
+var random = function(m, n) {
+        m = parseInt(m);
+        n = parseInt(n);
+        return Math.floor(Math.random() * (n - m + 1)) + m;
+    };
+
 
         .confetti{
     >.particle {

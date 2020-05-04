@@ -3,6 +3,7 @@
         <title>
              🏆🎬 Filmfare Awards Ceremony 🎬🏆
         </title> 
+        <link rel='icon' href='bolly.ico' type='image/x-icon'/ >
         <meta property="og:title" content="Random Sequence Generator - Bollywood" />  
         <meta property="og:type" content="webpage" />
         <meta property="og:url" content="https://harshrpatel.github.io/Random-Generator-Tambola/bollywood" />
@@ -59,6 +60,9 @@
                         <button id ="lastCall4" type="button" class="list-group-item"></button>
                     </div>
                 </div>
+            <div>
+                <input id="btnReset" type="button"  style="background-color: darkred; color: #fff; float: left; margin-left: 1rem; font-weight: 700" class="btn btn-primary btn-lg" value="RESET BOARD"/>
+                </div> 
             </div> 
             <br/> 
         </div>
@@ -348,6 +352,15 @@
                 }
                 var random = 0;
                 var animDuration = 1;
+                $('#btnReset').click(function() {
+                    var r = confirm("Are you sure you want to reload the board ?");
+                    if (r == true) {
+                        if (window.localStorage.getItem('selected_names')){
+                            window.localStorage.removeItem('selected_names');
+                            location.reload();
+                        }
+                    }
+                });
                 $('#btnGenerate').click(function() {    
                     $("#bingoWords").text("");
                     var elems = document.querySelectorAll(".highlight");
