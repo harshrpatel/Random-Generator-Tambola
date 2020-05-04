@@ -240,6 +240,7 @@
                         if (window.localStorage.getItem('selected_names')){
                              var getStorage = window.localStorage.getItem('selected_names').split(',');
                              bingo.selectedNumbers = getStorage.map(Number)
+                             // console.log('lengthhh', bingo.selectedNumbers);
                         }
                         if (bingo.selectedNumbers.length > 89) {
                             alert("All numbers Exhausted");
@@ -247,6 +248,7 @@
                         }
                         var random = bingo.generateRandom();
                         while ($.inArray(random, bingo.selectedNumbers) > -1) {
+                            // console.log('dup found');
                             random = bingo.generateRandom();
                         }
                         bingo.selectedNumbers.push(random);
