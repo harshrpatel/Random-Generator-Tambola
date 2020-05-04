@@ -1,0 +1,65 @@
+    $.each($(".confetti"), function() {
+        var confetticount = ($(this).width() / 50) * 10;
+        for (var i = 0; i <= confetticount; i++) {
+            var pos = random(1, 3);
+            var left;
+            var top;
+            if (pos === 1) {
+                //left
+                left = random(-50, 0);
+                top = random(-10, 90);
+            } else if (pos === 2) {
+                //middle
+                left = random(0, 100);
+                top = random(-20, 20);
+            } else {
+                //right
+                left = random(100, 150);
+                top = random(-10, 90);
+            }
+            $(this).append('<span class="particle c' + random(1, 2) + '" style="top:' + top + '%; left:' + left + '%;width:' + random(6, 8) + 'px; height:' + random(3, 4) + 'px;animation-delay: ' + (random(0, 3) / 10) + 's;"></span>');
+        }
+
+        setTimeout(function() {
+            $(".confetti > .particle").remove();
+        }, 2500);
+
+
+
+
+        <div class="section-container margin-top-mid hidden-shadow confetti">
+
+
+
+        .confetti{
+    >.particle {
+        opacity:0;
+        position: absolute;
+        animation: confetti 2s ease-in;
+        z-index: 0;
+        &.c1 {
+           background-color:rgba(76,175,80,0.5);
+        }
+        &.c2 {
+           background-color:rgba(156,39,176,0.5);
+        }
+    }
+}
+
+@keyframes confetti {
+    0% {
+        opacity:0;
+        transform:translateY(0%) rotate(0deg);
+    }
+    10% {
+        opacity:1;
+        transform:translateY(-600%) rotate(200deg);
+    }
+    15% {
+        transform:translateY(-800%) rotate(270deg);
+    }
+    100% {
+        opacity:0;
+        transform:translateY(2000%) rotate(1440deg);
+    }
+}
