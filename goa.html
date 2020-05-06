@@ -1,0 +1,352 @@
+<html> 
+    <head>
+        <title>
+             🎪🎡🎢🎠🎊 Welcome to DisneyLand 🎪🎡🎢🎠🎊
+        </title> 
+        <link rel='icon' href='goa.ico' type='image/x-icon'/ >
+        <meta property="og:title" content="Random Sequence Generator - Go Goa Gone" />  
+        <meta property="og:type" content="webpage" />
+        <meta property="og:url" content="https://harshrpatel.github.io/Random-Generator-Tambola/bollywood" />
+        <meta property="og:image" content="https://i.imgur.com/dYgXRJv.jpg" />
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> 
+        <!-- <meta name="viewport" content="width=device-width, user-scalable=no"> -->
+        <meta property="og:locale" content="en_US" />
+    </head>
+    <body>  
+        <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" style="background-color: gainsboro;  ">
+          <div class="container">
+            <div>
+                <h1 style="color:#0089CC">🌊🍹🏝 Go Goa Gone 🌊🍹🏝</h1> 
+            </div>
+          </div>
+        </nav> 
+        <div class="container board" > 
+            <div class="bigNumberDisplay well well-lg" style="margin-top: 2rem; background-color: #00BFA9; border: solid 3px;">
+                <!-- <h3 id="numCounter" style="color:#194BB3">Getting Cricketer..</h3> -->
+                 <h3 style="color:#EAD1DC" id="heading">Click below to get your favorite goa stuff</h3>
+                <!-- <h3 style="color:#C60000" id="selectedLeft"></h3> -->
+                <span class="mirage" id="mirageElement">19</span>
+                <div class="bingoNumberDesc" id="bingoWords"></div>
+            </div>
+            <div>
+                <input id="btnGenerate" type="button"  style="background-color: #00BFA9; color: #EAD1DC; border: solid 3px;" class="btn btn-primary btn-lg" value="Generate Name"/>
+            </div> 
+            <br/> 
+            <div class="row" >
+                <div  class="col-md-16"> 
+                    <table class="table table-striped table-responsive">
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>  </tr>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+                        <tr>  <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+                    </table>
+                </div>
+                <div class="col-md-16" style="margin-left: 1rem;">
+                    <h2 style="float: left; margin-top: 2rem; color: #fff   ;">Last 5 attractions called:</h2>
+                    <div class="list-group" style="width: 30rem">
+                        <button id ="lastCall0" type="button" class="list-group-item"></button>
+                        <button id ="lastCall1" type="button" class="list-group-item"></button>
+                        <button id ="lastCall2" type="button" class="list-group-item"></button>
+                        <button id ="lastCall3" type="button" class="list-group-item"></button>
+                        <button id ="lastCall4" type="button" class="list-group-item"></button>
+                    </div>
+                
+                </div>
+                <div>
+                <input id="btnReset" type="button"  style="background-color: darkred; color: #fff; float: left; margin-left: 1rem; font-weight: 700" class="btn btn-primary btn-lg" value="RESET BOARD"/>
+                </div> 
+
+            </div> 
+            <br/> 
+        </div>
+        <div>
+        <footer>
+        <p>Developed by: Harsh & Aayushi</p>
+        </footer>
+        </div> 
+        <style type="text/css">
+            body { 
+                padding-top: 70px;
+                background-image: url(https://i.imgur.com/ulPdJu6.jpg);
+                background-repeat: no-repeat;
+                background-size:cover; 
+                background-attachment:fixed; 
+                background-position: 50% 0%;
+            }
+            .divRules{
+                float:left;
+                width:20%;
+                text-align:left;
+                font-size:20px;
+            }
+            .highlight{
+                border: solid 6px #15F4EE;
+                border-top: solid 6px #15F4EE !important;
+                color: #15F4EE !important;
+            }
+            #prevNum{
+                font-size:90px;
+                color:#f00;
+            }
+            .bingoNumberDesc{
+                font-size:0.3em;
+                vertical-align: text-top;
+                color: #EAD1DC;
+            }
+            button.list-group-item:hover {
+              background-color: #734F96 !important;
+            }
+           div {
+                text-align: center;
+            } 
+            .bigNumberDisplay {
+                font-size: 8em;
+            } 
+            .numbersTable {
+                font-size: 1.6em;
+                width:100%;
+            } 
+            .list-group-item {
+                background-color: #00BFA9;
+                color: #EAD1DC !important;
+                font-size: 1.5em;
+                padding-bottom: 2em;
+                height: 4rem;
+            }
+            table {
+                margin-left: auto;
+                margin-right: auto;
+            } 
+            table, tr, td {
+                border-collapse: collapse;
+                border: solid 1px #999;
+            } 
+            td {
+                min-width: 100px;
+                height: 3em;
+                font-size: 1.2em;
+                padding: 10 10 10 10 !important;
+                vertical-align: middle !important;
+                text-align: center;
+                background-color: #00BFA9;
+                color: #C27BA0;
+            } 
+            td.selected {
+                color: #EBBDA7;
+                font-weight: 600;
+                background-color: #734F96;
+            } 
+            @media only screen and (min-width: 1000px){
+                .container {
+                    width: 1250px !important; 
+                }
+            }
+            @media only screen and (min-width: 768px) {
+               .container {
+                    width: 1280px !important; 
+                }
+                /*.board{
+                    -ms-transform-origin: 0 0;
+                    -webkit-transform-origin: 0 0;
+                    transform-origin: 0 0;
+                    -ms-transform: scaleX(2.0) scaleY(2.0);
+                    -webkit-transform: scaleX(0.9) scaleY(1.0);
+                    transform: scaleX(0.9) scaleY(1.0);
+                }*/
+            }
+        </style> 
+        <script
+          src="https://code.jquery.com/jquery-3.2.1.min.js"
+          integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+          crossorigin="anonymous"></script>
+        <script src="confetti.js"></script>
+        <script type="text/javascript">
+        var bingoNumberWords = ["", "Grand Hyatt", "The Leela", "Taj Holiday Village", "Novotel Shrem", "W Goa", "Doubletree By Hilton", "Hard Rock", "Lemon Tree Amarante", "Alila Diwa", "Zuri White Sands", "Ramada Goa", "Le Meridien", "Deltin Suites", "The Lalit", "Taj Exotica", "Thalassa", "Antares", "St Anthony", "Brittos", "Olives", "Purple Martini", "Go with the flow", "Curlies", "Las Olas", "Cohiba", "Trip Resto Bar", "Waters", "Blacksheep Bistro", "Bobby's Shack", "Spotty's Shack", "Shiva Valley", "LPK", "Club Cabana", "Titos", "Mambos", "Chronicles", "Hilltop", "Sinq Night Club", "Bora Bora", "AZ.U.R.", "Blue Waves", "Leopard Valley", "Club M", "Liquid Sky", "UV Bar", "Black Label", "Grey Goose", "Bacardi Rum", "Kingfisher", "Budweiser", "Old Monk", "Breezers", "Jagerbomb", "Red Wine", "Mojito", "Bloody Mary", "Martini", "Margarita", "Malibu", "Gin & Tonic", "Candolim Beach", "Calangute Beach", "Baga Beach", "Vagator Beach", "Anjuna Beach", "Morjim Beach", "Sinquerim Beach", "Colva Beack", "Dudhsagar Falls", "Agauda Fort", "Chapora Fort", "Anjuna Flee Market", "Mapusa Market", "Saturday Night Market", "Basillica of Bom Jesus", "Deltin Royal", "Deltin Jack", "Big Daddy", "Casino Pride", "La Calypso", "Mini Flush", "5 Card Poker", "Roulette", "Blackjack", "Slot Machines", "Teen Patti", "Wheel of Fortune", "Bingo", "Craps", "Baccarat"];
+            bingoNumberWords.sort();
+            var last5call = [];
+            (function($){
+                $.fn.extend({
+                    numAnim: function(options) {
+                        if ( ! this.length)
+                            return false;
+
+                        this.defaults = {
+                            endAt: 2560,
+                            numClass: 'autogen-num',
+                            duration: 1,   // seconds
+                            interval: 60  // ms
+                        };
+                        var settings = $.extend({}, this.defaults, options);
+
+                        var $num = $('<span/>', {
+                            'class': settings.numClass 
+                        });
+
+                        return this.each(function() {
+                            var $this = $(this);
+
+                            // Wrap each number in a tag.
+                            var frag = document.createDocumentFragment(),
+                                numLen = settings.endAt.toString().length;
+                            for (x = 0; x < numLen; x++) {
+                                var rand_num = Math.floor( Math.random() * 10 );
+                                frag.appendChild( $num.clone().text(rand_num)[0] )
+                            }
+                            $this.empty().append(frag);
+
+                            var get_next_num = function(num) {
+                                ++num;
+                                if (num > 9) return 0;
+                                return num;
+                            };
+
+                            // Iterate each number.
+                            $this.find('.' + settings.numClass).each(function() {
+                                var $num = $(this),
+                                    num = parseInt( $num.text() );
+
+                                var interval = setInterval( function() {
+                                    num = get_next_num(num);
+                                    $num.text(num);
+                                }, settings.interval);
+
+                                setTimeout( function() {
+                                    clearInterval(interval);
+                                }, settings.duration * 300 - settings.interval);
+                            });
+                            
+                            setTimeout( function() {
+                                $this.text( settings.endAt.toString() );
+                                $("#mirageElement").css("display","none");
+                                $('#numCounter').css("display","");  
+
+                            }, settings.duration * 300);
+                        });
+                    }
+                });
+            })(jQuery);
+
+                $(function() { 
+                var bingo = {
+                    selectedNumbers: [],
+                    generateRandom: function() {
+                        var min = 1;
+                        var max = 90;
+                        var random = Math.floor(Math.random() * (max - min + 1)) + min;
+                        return random;
+                    },
+                    generateNextRandom: function() {
+                        if (window.localStorage.getItem('selected_names')){
+                             var getStorage = window.localStorage.getItem('selected_names').split(',');
+                             bingo.selectedNumbers = getStorage.map(Number)
+                             // console.log('lengthhh', bingo.selectedNumbers);
+                        }
+                        if (bingo.selectedNumbers.length > 89) {
+                            alert("All numbers Exhausted");
+                            return 0;
+                        }
+                        var random = bingo.generateRandom();
+                        while ($.inArray(random, bingo.selectedNumbers) > -1) {
+                            // console.log('dup found');
+                            random = bingo.generateRandom();
+                        }
+                        bingo.selectedNumbers.push(random);
+                        window.localStorage.setItem('selected_names', bingo.selectedNumbers);
+                        return random;
+                    }
+                };
+                $("#mirageElement").css("display","none");
+                $('td').each(function() {
+                    if (this.parentNode.rowIndex === 9 && this.cellIndex > 0){
+                        var concatClass = this.cellIndex + "" + this.parentNode.rowIndex;
+                        var numberString = (parseInt(concatClass, 10) + 1).toString();
+                    }else{
+                        var concatClass = this.cellIndex + "" + (this.parentNode.rowIndex + 1);
+                        var numberString = parseInt(concatClass, 10);
+                    }
+                    $(this).addClass("cell" + numberString.toString()).text(bingoNumberWords[numberString]);
+                });
+                if (window.localStorage.getItem('selected_names')){
+                    var selectedArray = window.localStorage.getItem('selected_names').split(',');
+                    for (var i = 0; i < selectedArray.length; i++) {
+                        $('td.cell' + selectedArray[i]).addClass('selected');
+                    }
+                }
+                var random = 0;
+                var animDuration = 1;
+                confetti.maxCount = 1100;     //set max confetti count
+                confetti.speed = 3.5; //set confetti speed
+                $('#btnReset').click(function() {
+                    var r = confirm("Are you sure you want to reload the board ?");
+                    if (r == true) {
+                        if (window.localStorage.getItem('selected_names')){
+                            window.localStorage.removeItem('selected_names');
+                            location.reload();
+                        }
+                    }
+                });
+                $('#btnGenerate').click(function() {
+                    confetti.start();  //start confetti
+                    $("#bingoWords").text("");
+                    var elems = document.querySelectorAll(".highlight");
+                    [].forEach.call(elems, function(el) {
+                        el.classList.remove("highlight");
+                    })
+                    $('#prevNum').text($('#numCounter').text());
+                    random = bingo.generateNextRandom().toString();
+                    if(last5call.length == 5){
+                        last5call.pop();
+                        last5call.unshift(bingoNumberWords[random]);
+                    } else{
+                        last5call.unshift(bingoNumberWords[random]);
+                    }
+                    for (var i = 0; i <= last5call.length; i++) {
+                        if (last5call[i]){
+                            document.getElementById("lastCall" + i).innerHTML = (i+1) + ')' + ' ' + last5call[i];
+                        }
+                    }
+                    $('td.cell' + random).text(bingoNumberWords[random]);
+                    $("#numCounter").css("display","none");
+                    $("#mirageElement").css("display","");
+                    $('#numCounter').text(random);
+                    $("#heading").text("Revealing Artist ...");
+                    //$('td.cell' + random).addClass('selected');
+                    $("#mirageElement").numAnim({
+                        endAt: 90,
+                        duration: animDuration
+                    });
+                    setTimeout(function(){ 
+                        $('td.cell' + random).addClass('selected highlight');
+                        var numbers = document.getElementsByClassName('selected');
+                        // $("#selectedLeft").text("selected numbers left" + "   " + ((bingoNumberWords.length - 1) - numbers.length));
+                        $("#heading").text("");
+                         if(bingoNumberWords[random]){
+                            $("#bingoWords").text(bingoNumberWords[random]);
+                        }else{
+                            $("#bingoWords").text("");
+                        }
+                        $("#numCounter").animate({zoom: '200%'}, "slow");
+                        $("#numCounter").animate({zoom: '100%'}, "slow");
+                        confetti.stop(); //stop confetti
+                        }, animDuration*300);
+
+                });
+                window.onbeforeunload = function(e) {
+                    e = e || window.event;
+                    var returnString = 'Are you sure?';
+                    if (e) {
+                        e.returnValue = returnString;
+                    }
+                    return returnString;
+                };
+            });
+        </script> 
+    </body>
+</html>
