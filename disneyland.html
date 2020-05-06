@@ -1,7 +1,7 @@
 <html> 
     <head>
         <title>
-             🎪🎡🎢🎠🎊 Welcome to DisneyLand 🎪🎡🎢🎠🎊
+             🍻🏖💃🎰 Go Goa Gone 🍻🏖💃🎰
         </title> 
         <link rel='icon' href='mickey.ico' type='image/x-icon'/ >
         <meta property="og:title" content="Random Sequence Generator - Disneyland" />  
@@ -17,14 +17,14 @@
         <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" style="background-color: gainsboro;  ">
           <div class="container">
             <div>
-                <h1 style="color:#0089CC">🎪🎡🎢🎠🎊 Welcome to DisneyLand 🎪🎡🎢🎠🎊</h1> 
+                <h1 style="color:#0089CC">🍻🏖💃🎰 Go Goa Gone 🍻🏖💃🎰</h1> 
             </div>
           </div>
         </nav> 
         <div class="container board" > 
             <div class="bigNumberDisplay well well-lg" style="margin-top: 2rem; background-color: #734F96; border: solid 3px;">
                 <!-- <h3 id="numCounter" style="color:#194BB3">Getting Cricketer..</h3> -->
-                 <h3 style="color:#EAD1DC" id="heading">Click below to get your dream attraction</h3>
+                 <h3 style="color:#EAD1DC" id="heading">Click below to get your holiday attraction</h3>
                 <!-- <h3 style="color:#C60000" id="selectedLeft"></h3> -->
                 <span class="mirage" id="mirageElement">19</span>
                 <div class="bingoNumberDesc" id="bingoWords"></div>
@@ -49,7 +49,7 @@
                     </table>
                 </div>
                 <div class="col-md-16" style="margin-left: 1rem;">
-                    <h2 style="float: left; margin-top: 2rem; color: #fff   ;">Last 5 attractions called:</h2>
+                    <h2 style="float: left; margin-top: 2rem; color: #fff;">Last 5 holiday attractions called:</h2>
                     <div class="list-group" style="width: 30rem">
                         <button id ="lastCall0" type="button" class="list-group-item"></button>
                         <button id ="lastCall1" type="button" class="list-group-item"></button>
@@ -171,7 +171,7 @@
           src="https://code.jquery.com/jquery-3.2.1.min.js"
           integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
           crossorigin="anonymous"></script>
-        <script src="confetti.js"></script>
+        <script src="ripples.js"></script>
         <script type="text/javascript">
         var bingoNumberWords = ["", "Tarzan's Treehouse", "Dumbo's Carousel", "Mickey Mouse Clubhouse", "Mad Tea Party", "Jungle Cruise", "Peter Pan's Flight", "Sleeping Beauty Castle", "Toy Story Mania", "Finding Nemo Voyage", "Donald's Boat RIde", "Electric FireWorks", "Simpsons Krustyland", "World of Colors", "Despicable Me", "Shrek 4D", "WaterWorld Show", "Pinocchio's Twister", "Popeye's Mini Train", "Animal Kingdom", "Princess Dress Up", "Transfomers 3D", "Revenge Of Mummy", "X-scream", "Thunder Mountain Railroad", "Pirates Of The Carribean", "Harry Potter Journey", "Jurrasic World Ride", "Indiana Jones Adventure", "Guardians Of The Galaxy", "Space Mountain", "Skull Island - King Kong", "Star Wars World", "The Haunted Mansion", "Incredible Hulk Coaster", "Doctor Doom's Fearfall", "Expedition Everest", "Fast & Furious", "Twilight Terror Tower", "Rock 'n' Roller Coaster", "Zero Gravity", "Mickey Mouse", "Donald Duck", "Pluto", "Goofy", "Winnie The Pooh", "Minnie Mouse", "Chip 'n' Dale", "Cinderella", "Snow White", "Ariel (Little Mermaid)", "Pinocchio", "Daisy Duck", "Aladdin", "Simba", "Kung Fu Panda", "Moana", "Rapunzel", "Stitch", "Dumbo", "Peter Pan", "Smore's Grill", "Goofy Brownies", "Jolly Macaroons", "Loaded Nachos Bar", "Candyfloss Stall", "Mickey Waffles", "Mini Donuts", "Churros Stop", "Captain Cookies", "Apple Candies", "Burgermania", "Minnie Ears Bar", "Tiki Juice Bar", "Hawaiian Whip Stall", "Banana Kabana", "Minnie Ear Hats", "Mickey Poncho", "Character Pins", "Magic Mugs", "Disney MagicBands", "Autograph Books", "Memory Maker", "Shot Glasses", "Fridge Magnets", "Disney Jerseys", "Keychains", "Pandora Charms", "Disney Balloons", "Charcters Figurines", "Disney Caricatures"];
             bingoNumberWords.sort();
@@ -267,6 +267,11 @@
                         return random;
                     }
                 };
+                $('body').ripples({
+                    resolution: 512,
+                    dropRadius: 20,
+                    perturbance: 0.04,
+                });
                 $("#mirageElement").css("display","none");
                 $('td').each(function() {
                     if (this.parentNode.rowIndex === 9 && this.cellIndex > 0){
@@ -286,8 +291,6 @@
                 }
                 var random = 0;
                 var animDuration = 1;
-                confetti.maxCount = 1100;     //set max confetti count
-                confetti.speed = 3.5; //set confetti speed
                 $('#btnReset').click(function() {
                     var r = confirm("Are you sure you want to reload the board ?");
                     if (r == true) {
@@ -298,7 +301,6 @@
                     }
                 });
                 $('#btnGenerate').click(function() {
-                    confetti.start();  //start confetti
                     $("#bingoWords").text("");
                     var elems = document.querySelectorAll(".highlight");
                     [].forEach.call(elems, function(el) {
@@ -339,7 +341,6 @@
                         }
                         $("#numCounter").animate({zoom: '200%'}, "slow");
                         $("#numCounter").animate({zoom: '100%'}, "slow");
-                        confetti.stop(); //stop confetti
                         }, animDuration*300);
 
                 });
