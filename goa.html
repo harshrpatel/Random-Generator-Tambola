@@ -14,23 +14,23 @@
         <meta property="og:locale" content="en_US" />
     </head>
     <body>  
-        <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" style="background-color: gainsboro;  ">
+        <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" style="background-color: #7AB5A3;  ">
           <div class="container">
             <div>
-                <h1 style="color:#0089CC">🍻🏖💃🎰 Go Goa Gone 🍻🏖💃🎰</h1> 
+                <h1 style="color:#FDF7EA">🍻🏖💃🎰 Go Goa Gone 🍻🏖💃🎰</h1> 
             </div>
           </div>
         </nav> 
         <div class="container board" > 
-            <div class="bigNumberDisplay well well-lg" style="margin-top: 2rem; background-color: #734F96; border: solid 3px;">
+            <div class="bigNumberDisplay well well-lg" style="margin-top: 2rem; background-color: #ECD09C; border: solid 3px;">
                 <!-- <h3 id="numCounter" style="color:#194BB3">Getting Cricketer..</h3> -->
-                 <h3 style="color:#EAD1DC" id="heading">Click below to get your holiday attraction</h3>
+                 <h3 style="color:#04ABB1" id="heading">Click below to get your holiday attraction</h3>
                 <!-- <h3 style="color:#C60000" id="selectedLeft"></h3> -->
                 <span class="mirage" id="mirageElement">19</span>
                 <div class="bingoNumberDesc" id="bingoWords"></div>
             </div>
             <div>
-                <input id="btnGenerate" type="button"  style="background-color: #734F96; color: #EAD1DC; border: solid 3px;" class="btn btn-primary btn-lg" value="Generate Name"/>
+                <input id="btnGenerate" type="button"  style="background-color: #F9D199; color: #04ABB1; border: solid 3px;" class="btn btn-primary btn-lg" value="Generate Name"/>
             </div> 
             <br/> 
             <div class="row" >
@@ -49,7 +49,7 @@
                     </table>
                 </div>
                 <div class="col-md-16" style="margin-left: 1rem;">
-                    <h2 style="float: left; margin-top: 2rem; color: #fff;">Last 5 holiday attractions called:</h2>
+                    <h2 style="float: left; margin-top: 2rem; color: #FDF7EA;">Last 5 holiday attractions called:</h2>
                     <div class="list-group" style="width: 30rem">
                         <button id ="lastCall0" type="button" class="list-group-item"></button>
                         <button id ="lastCall1" type="button" class="list-group-item"></button>
@@ -74,10 +74,11 @@
         <style type="text/css">
             body { 
                 padding-top: 70px;
-                background-image: url(https://i.imgur.com/ulPdJu6.jpg);
+                background-image: url(https://i.imgur.com/OrnnxDL.jpg);
                 background-repeat: no-repeat;
-                background-size:cover; 
-                background-attachment:fixed; 
+                background-size: cover; 
+                /*background-size:cover; */
+                /*background-attachment:fixed; */
                 background-position: 50% 0%;
             }
             .divRules{
@@ -87,9 +88,9 @@
                 font-size:20px;
             }
             .highlight{
-                border: solid 6px #15F4EE;
-                border-top: solid 6px #15F4EE !important;
-                color: #15F4EE !important;
+                border: solid 6px #E7F358;
+                border-top: solid 6px #E7F358 !important;
+                color: #E7F358 !important;
             }
             #prevNum{
                 font-size:90px;
@@ -98,7 +99,7 @@
             .bingoNumberDesc{
                 font-size:0.3em;
                 vertical-align: text-top;
-                color: #EAD1DC;
+                color: #04ABB1;
             }
             button.list-group-item:hover {
               background-color: #734F96 !important;
@@ -114,8 +115,8 @@
                 width:100%;
             } 
             .list-group-item {
-                background-color: #734F96;
-                color: #EAD1DC !important;
+                background-color: #F9D199;
+                color: #4B9D8D !important;
                 font-size: 1.5em;
                 padding-bottom: 2em;
                 height: 4rem;
@@ -135,13 +136,13 @@
                 padding: 10 10 10 10 !important;
                 vertical-align: middle !important;
                 text-align: center;
-                background-color: #EAD1DC;
-                color: #C27BA0;
+                background-color: #F9D199;
+                color: #67D29D;
             } 
             td.selected {
-                color: #EBBDA7;
+                color: #4B9D8D;
                 font-weight: 600;
-                background-color: #734F96;
+                background-color: #fbb35a;
             } 
             @media only screen and (min-width: 1000px){
                 .container {
@@ -168,7 +169,7 @@
           crossorigin="anonymous"></script>
         <script src="ripples.js"></script>
         <script type="text/javascript">
-        var bingoNumberWords = ["", "Tarzan's Treehouse", "Dumbo's Carousel", "Mickey Mouse Clubhouse", "Mad Tea Party", "Jungle Cruise", "Peter Pan's Flight", "Sleeping Beauty Castle", "Toy Story Mania", "Finding Nemo Voyage", "Donald's Boat RIde", "Popeye's Mini Train", "Simpsons Krustyland", "World of Colors", "Despicable Me", "Shrek 4D", "Transfomers 3D", "Revenge Of Mummy", "X-scream", "Thunder Mountain Railroad", "Pirates Of The Carribean", "Harry Potter Journey", "Jurrasic World Ride", "Indiana Jones Adventure", "Guardians Of The Galaxy", "Space Mountain", "Skull Island - King Kong", "Star Wars World", "The Haunted Mansion", "Incredible Hulk Coaster", "Fast & Furious", "Mickey Mouse", "Donald Duck", "Pluto", "Goofy", "Winnie The Pooh", "Minnie Mouse", "Chip 'n' Dale", "Cinderella", "Snow White", "Ariel (Little Mermaid)", "Pinocchio", "Daisy Duck", "Dumbo", "Simba", "Peter Pan", "Smore's Grill", "Goofy Brownies", "Jolly Macaroons", "Loaded Nachos", "Candyfloss Stall", "Mickey Waffles", "Mini Donuts", "Churros Stop", "Captain Cookies", "Apple Candies", "Burgermania", "Minnie Ear IceCream", "Tiki Juice Bar", "Hawaiian Whip Stall", "Banana Kabana", "Minnie Ear Hats", "Mickey Poncho", "Character Pins", "Refill Mugs", "Disney MagicBands", "Autograph Books", "Memory Maker", "Shot Glasses", "Fridge Magnets", "Disney Jerseys", "Keychains", "Pandora Charms", "Disney Balloons", "Charcters Figurines", "Disney Caricatures", "Moana", "Kung Fu Panda", "Rapunzel", "Toy Story", "Lion King", "The Jungle Book", "Beauty and the Beast", "Inside Out", "Hercules", "Chronicles of Narnia", "Lilo & Stitch", "101 Dalmatians", "Tarzan", "Ducktales", "TaleSpin"];
+        var bingoNumberWords = ["", "Grand Hyatt", "The Leela", "Taj Holiday Village", "Novotel Shrem", "W Goa", "Doubletree By Hilton", "Hard Rock", "Lemon Tree Amarante", "Alila Diwa", "Zuri White Sands", "Ramada Goa", "Le Meridien", "Deltin Suites", "The Lalit", "Taj Exotica", "Thalassa", "Antares", "St Anthony", "Brittos", "Olives", "Purple Martini", "Go with the flow", "Curlies", "Las Olas", "Cohiba", "Trip Resto Bar", "Waters", "Blacksheep Bistro", "Bobby's Shack", "Spotty's Shack", "Shiva Valley", "LPK", "Club Cabana", "Titos", "Mambos", "Chronicles", "Hilltop", "Sinq Night Club", "Bora Bora", "AZ.U.R.", "Blue Waves", "Leopard Valley", "Club M", "Liquid Sky", "UV Bar", "Black Label", "Grey Goose", "Bacardi Rum", "Kingfisher", "Budweiser", "Old Monk", "Breezers", "Jagerbomb", "Red Wine", "Mojito", "Bloody Mary", "Martini", "Margarita", "Malibu", "Gin & Tonic", "Candolim Beach", "Calangute Beach", "Baga Beach", "Vagator Beach", "Anjuna Beach", "Morjim Beach", "Sinquerim Beach", "Colva Beack", "Dudhsagar Falls", "Agauda Fort", "Chapora Fort", "Anjuna Flee Market", "Mapusa Market", "Saturday Night Market", "Basillica of Bom Jesus", "Deltin Royal", "Deltin Jack", "Big Daddy", "Casino Pride", "La Calypso", "Mini Flush", "5 Card Poker", "Roulette", "Blackjack", "Slot Machines", "Teen Patti", "Wheel of Fortune", "Bingo", "Craps", "Baccarat"];
             bingoNumberWords.sort();
             var last5call = [];
             (function($){
@@ -262,11 +263,7 @@
                         return random;
                     }
                 };
-                $('body').ripples({
-                    resolution: 512,
-                    dropRadius: 20,
-                    perturbance: 0.04,
-                });
+                // $('body').ripples();
                 $("#mirageElement").css("display","none");
                 $('td').each(function() {
                     if (this.parentNode.rowIndex === 9 && this.cellIndex > 0){
