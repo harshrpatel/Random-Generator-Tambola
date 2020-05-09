@@ -24,8 +24,9 @@
             </div>
           </div>
         </nav> 
-        <div class="container" > 
-            <div class="bigNumberDisplay well well-lg" style="margin-top: 2rem; background-color: #35393F; border: solid 3px;">
+        <div class="container" id="starshine"> 
+            <div class="template shine"></div>
+            <div class="bigNumberDisplay well well-lg" style="margin-top: 10rem; background-color: #35393F; border: solid 3px;">
                 <!-- <h3 id="numCounter" style="color:#194BB3">Getting Cricketer..</h3> -->
                  <h3 style="color: #FDBA6B" id="heading">Click below to get your favorite contestant</h3>
                 <!-- <h3 style="color:#C60000" id="selectedLeft"></h3> -->
@@ -75,9 +76,9 @@
         <style type="text/css">
             body { 
                 padding-top: 70px;
-                background-image: url(https://i.imgur.com/WCBvI1T.png);
-                background-repeat: no-repeat;
-                background-size:cover; 
+                background-image: url(https://i.imgur.com/GtkCTWD.png);
+                background-repeat: round;
+                background-size:contain; 
                 background-attachment:fixed; 
                 font-family: "Comic Sans MS", cursive, sans-serif;
                 /*background-position: 50% 0%;*/
@@ -145,11 +146,26 @@
                 font-weight: 600;
                 background-color: #FF2500;
             } 
-            @media (min-width: 1000px){
+           @media only screen and (min-width: 1000px){
                 .container {
-                    width: 1400px !important;
+                    width: 1250px !important; 
                 }
             }
+            @media only screen and (min-width: 768px) {
+               .container {
+                    width: 1280px !important; 
+                }
+            }
+            /*body {
+                padding: 0;
+                margin:0;
+                background-color: #110019;
+                background-repeat: no-repeat;
+                background-size: auto;
+                background-position: center center;
+                background-image: none;
+            }*/
+
         </style> 
         <script
           src="https://code.jquery.com/jquery-3.2.1.min.js"
