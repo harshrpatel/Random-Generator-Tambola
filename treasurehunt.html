@@ -312,7 +312,7 @@
 
                 $('#btnGenerate').click(function() {
                 $("#bingoWords").removeClass("shake");    
-                     var duration = 5000;
+                     var duration = 2000;
                     var animationEnd = Date.now() + duration;
                     var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
 
@@ -324,27 +324,11 @@
                         return clearInterval(interval);
                       }
 
-                      var particleCount = 50 * (timeLeft / duration);
+                      var particleCount = 350 * (timeLeft / duration);
                       // since particles fall down, start a bit higher than random
                       confetti(Object.assign({}, defaults, { colors:colors, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
                       confetti(Object.assign({}, defaults, { colors:colors, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
                     }, 100);
-                    //  confetti({
-                    //     particleCount: 2000,
-                    //     angle: 0,
-                    //     spread: 360,
-                    //     startVelocity: 30,
-                    //     origin: { x: 0 },
-                    //     colors: colors
-                    // });
-                    // confetti({
-                    //     particleCount: 2000,
-                    //     angle: 280,
-                    //     spread: 360,
-                    //     startVelocity: 30,
-                    //     origin: { x: 1 },
-                    //     colors: colors
-                    // });
                     // confetti({particleCount: 1500, spread: 180});
                     $("#bingoWords").text("");
                     var elems = document.querySelectorAll(".highlight");
