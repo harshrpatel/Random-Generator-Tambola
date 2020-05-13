@@ -311,7 +311,7 @@
                     }
 
                 $('#btnGenerate').click(function() {
-                $("#bingoWords").removeClass("shake");    
+                $("#bingoWords").removeClass("rollerRight");    
                      var duration = 2000;
                     var animationEnd = Date.now() + duration;
                     var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
@@ -364,7 +364,7 @@
                         // $("#selectedLeft").text("selected numbers left" + "   " + ((bingoNumberWords.length - 1) - numbers.length));
                         $("#heading").text("");
                          if(bingoNumberWords[random]){
-                            $("#bingoWords").addClass("shake").text(bingoNumberWords[random]);
+                            $("#bingoWords").addClass("rollerRight").text(bingoNumberWords[random]);
                         }else{
                             $("#bingoWords").text("");
                         }
