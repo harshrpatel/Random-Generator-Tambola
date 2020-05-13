@@ -1,6 +1,6 @@
 import ast
 
-with open("cartoon-random.txt", "r") as fd:
+with open("treasure-random", "r") as fd:
     lines = fd.readlines()
     for line in lines:
         print('"{}",'.format(line.strip()))
