@@ -20,7 +20,7 @@
         <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
           <div class="container">
             <div>
-                <h1 style="color:darkgray"> 🍬🍫✏️🖋🚲🎸 90's Nostalgia 🍬🍫✏️🖋🚲🎸 </h1> 
+                <h1 style="color:#5DDFC7"> 🍬🍫✏️🖋🚲🎸 90's Nostalgia 🍬🍫✏️🖋🚲🎸 </h1> 
             </div>
           </div>
         </nav> 
@@ -28,13 +28,13 @@
             <div class="template shine"></div>
             <div class="bigNumberDisplay well well-lg" style="margin-top: 4rem; background-color: #35393F; border: solid 3px;">
                 <!-- <h3 id="numCounter" style="color:#194BB3">Getting Cricketer..</h3> -->
-                 <h3 style="color: cornsilk" id="heading">Click below to get your clue</h3>
+                 <h3 style="color: cornsilk" id="heading">Click below to get your treat</h3>
                 <!-- <h3 style="color:#C60000" id="selectedLeft"></h3> -->
                 <!-- <span class="mirage" id="mirageElement">19</span> -->
                 <div class="bingoNumberDesc" id="bingoWords"></div>
             </div>
             <div>
-                <input id="btnGenerate" type="button"  style="background-color: #35393F; color: #cornsilk;" class="btn btn-primary btn-lg" value="Fetch clues"/>
+                <input id="btnGenerate" type="button"  style="background-color: #35393F; color: #cornsilk;" class="btn btn-primary btn-lg" value="Fetch treats"/>
             </div> 
             <br/> 
             <div class="row" >
@@ -53,7 +53,7 @@
                     </table>
                 </div>
                 <div class="col-md-16 lastCalled" style="margin-left: 2rem">
-                    <h2 style="float: left; color:black; margin-top: 2rem">Last 5 clues called:</h2>
+                    <h2 style="float: left; color:#FF0149; margin-top: 2rem">Last 5 treats called:</h2>
                     <div class="list-group" style="width: 30rem">
                         <button id ="lastCall0" type="button" class="list-group-item"></button>
                         <button id ="lastCall1" type="button" class="list-group-item"></button>
@@ -62,7 +62,7 @@
                         <button id ="lastCall4" type="button" class="list-group-item"></button>
                     </div>
                     <div>
-                    <input id="btnReset" type="button"  style="background-color: darkred; color: #fff; float: left; margin-left: 1rem; font-weight: 700" class="btn btn-primary btn-lg" value="RESET BOARD"/>
+                    <input id="btnReset" type="button"  style="background-color: #5CDFC8; color: #fff; float: left; margin-left: 1rem; font-weight: 700" class="btn btn-primary btn-lg" value="RESET BOARD"/>
                     </div> 
                 </div>
             </div> 
@@ -94,14 +94,15 @@
             .lastCalled{
                 background-image: url(https://i.imgur.com/WNbOpzm.jpg);
                 background-size: contain;
-                background-repeat: no-repeat;
+                background-repeat: repeat;
                 background-position: center;
                 min-height: 55rem;
             }
             .highlight{
-                border: solid 6px gold;
-                border-top: solid 6px gold !important;
-                color: gold !important;
+                border: solid 6px #5CDFC8;
+                border-top: solid 6px #5CDFC8 !important;
+                color: #5CDFC8 !important;
+                background-color: #FE0149 !important;
             }
             #prevNum{
                 font-size:90px;
@@ -127,7 +128,7 @@
             } 
             .list-group-item {
                 background-color: black;
-                color: burlywood !important;
+                color: #FE0149 !important;
                 font-size: 1.5em;
                 padding-bottom: 2em;
                 height: 4rem;
@@ -149,11 +150,13 @@
                 text-align: center;
                 background-color: #FF87D5;
                 color: #131A20;
+                max-width: 137px;
+                word-break: break-word;
             } 
             td.selected {
-                color: burlywood;
-                font-weight: 600;
-                background-color: black;
+                    color: black;
+                    font-weight: 600;
+                    background-color: #FFC62F;
             } 
            @media only screen and (min-width: 1000px){
                 .container {
@@ -182,7 +185,7 @@
           crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.2.0/dist/confetti.browser.min.js"></script>
         <script type="text/javascript">
-        var bingoNumberWords = ["", "Apsara Pencils", "Natraj Stationery", "Milton Bottles", "Camlin Ink", "Parker Pen", "Paper Boats", "Pilot Pens", "FLAMES", "Friendship Belts", "Name/place/animal/thing", "Book Cricket", "Color Color Which Color", "Pencil Toppers", "Slam Books", "Navneet Notebooks", "Super Mario", "Contra", "Pagathiya", "Road Rash", "Tetris", "Pinball", "Snakes & Ladders", "Ludo", "Satoliyu", "Carrom", "Marbles", "Stop & Party", "Tazos", "Ubhi Kho", "WWF Cards", "Aam Pachan", "Pan Pasand", "Swad", "Phantom Cigarettes", "Boomer", "Goldspot", "Melody", "Fusen Gum", "Uncle Chips", "Pepsi Popsicles", "Poppins", "Chicklets", "Kismi", "Mango Bite", "Fatafat", "Ramayan", "Mahabharat", "Aahat", "Dekh Bhai Dekh", "Tu Tu Main Main", "Hum Paanch", "Boogie Woogie", "Office Office", "Shaktimaan", "Chitrahaar", "Malgudi Days", "CID", "Hip Hip Hooray", "Just Mohabbat", "Shriman Shrimati", "Walkman", "Hero Cycles", "Tinkle", "Champak", "Pager", "Landlines", "Yellow Pages", "Doordarshan", "Drive-in", "Typewriter", "Gruh Shobha", "Video Cassettes", "Maruti 800", "Windows 98", "Archies Comics", "Made in India", "Kesariya Roop Maro", "Gud naal Ishq mitha", "Taare Gin Gin Yaad Teri", "Sayooni", "Bijuriya", "Ankhon mein Tera Hi Chehra", "Lift Karade", "O Sanam Mahobbat ki Kasam", "Tanha Dil", "Yaaron Dosti", "Yaad Piya Ki", "Purani Jeans aur Guitar", "Chui Mui se Tum", "Dhoom Pichak Dhoom"];
+        var bingoNumberWords = ["", "Apsara Pencils", "Natraj Stationery", "Milton Bottles", "Camlin Ink", "Parker Pen", "Paper Boats", "Pilot Pens", "FLAMES", "Friendship Belts", "Name/Place/Animal/Thing", "Book Cricket", "Color Color Which Color", "Pencil Toppers", "Slam Books", "Navneet Notebooks", "Super Mario", "Contra", "Pagathiya", "Road Rash", "Tetris", "Pinball", "Snakes & Ladders", "Ludo", "Satoliyu", "Carrom", "Marbles", "Stop & Party", "Tazos", "Ubhi Kho", "WWF Cards", "Aam Pachan", "Pan Pasand", "Swad", "Phantom Cigarettes", "Boomer", "Goldspot", "Melody", "Fusen Gum", "Uncle Chips", "Pepsi Popsicles", "Poppins", "Chicklets", "Kismi", "Mango Bite", "Fatafat", "Ramayan", "Mahabharat", "Aahat", "Dekh Bhai Dekh", "Tu Tu Main Main", "Hum Paanch", "Boogie Woogie", "Office Office", "Shaktimaan", "Chitrahaar", "Malgudi Days", "CID", "Hip Hip Hooray", "Just Mohabbat", "Shriman Shrimati", "Walkman", "Hero Cycles", "Tinkle", "Champak", "Pager", "Landlines", "Yellow Pages", "Doordarshan", "Drive-in", "Typewriter", "Gruh Shobha", "Video Cassettes", "Maruti 800", "Windows 98", "Archies Comics", "Made in India", "Kesariya Roop Maro", "Gud naal Ishq mitha", "Taare Gin Gin Yaad Teri", "Sayooni", "Bijuriya", "Ankhon mein Tera Hi Chehra", "Lift Karade", "O Sanam Mahobbat ki Kasam", "Tanha Dil", "Yaaron Dosti", "Yaad Piya Ki", "Purani Jeans aur Guitar", "Chui Mui se Tum", "Dhoom Pichak Dhoom"];
             bingoNumberWords.sort();
             var last5call = [];
             var colors = ['#d7bd6d', '#f0e4c4', '#efe4c4', '#876e22', '#212526'];
@@ -310,25 +313,22 @@
                       return Math.random() * (max - min) + min;
                     }
 
-                $('#btnGenerate').click(function() {
-                $("#bingoWords").removeClass("rollerRight");    
-                     var duration = 2000;
-                    var animationEnd = Date.now() + duration;
-                    var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
-
-                    
-                    var interval = setInterval(function() {
-                      var timeLeft = animationEnd - Date.now();
-
-                      if (timeLeft <= 0) {
-                        return clearInterval(interval);
-                      }
-
-                      var particleCount = 350 * (timeLeft / duration);
-                      // since particles fall down, start a bit higher than random
-                      confetti(Object.assign({}, defaults, { colors:colors, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
-                      confetti(Object.assign({}, defaults, { colors:colors, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
-                    }, 100);
+                    $('#btnGenerate').click(function() {
+                    $("#bingoWords").removeClass("rollerRight");    
+                    confetti({
+                        particleCount: 1500,
+                        angle: 60,
+                        spread: 360,
+                        startVelocity: 30,
+                        origin: { x: 0 }
+                    });
+                    confetti({
+                        particleCount: 1500,
+                        angle: 120,
+                        spread: 360,
+                        startVelocity: 30,
+                        origin: { x: 1 }
+                    });
                     // confetti({particleCount: 1500, spread: 180});
                     $("#bingoWords").text("");
                     var elems = document.querySelectorAll(".highlight");
@@ -352,7 +352,7 @@
                     $("#numCounter").css("display","none");
                     $("#mirageElement").css("display","");
                     $('#numCounter').text(random);
-                    $("#heading").text("Revealing Artist ...");
+                    $("#heading").text("Revealing Treat ...");
                     //$('td.cell' + random).addClass('selected');
                     $("#mirageElement").numAnim({
                         endAt: 90,
