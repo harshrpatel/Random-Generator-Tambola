@@ -39,7 +39,11 @@
             <br/> 
             <div class="row" >
                 <div  class="col-md-16"> 
+                  <!--   <table class="table table-striped table-responsive"> 
+                       
+                    </table> -->
                     <table class="table table-striped table-responsive">
+                         <tr> <th>MOVIES I<th>MOVIES II</th> <th>MOVIES III</th> <th>CHARACTER NAMES</th> <th>ACTOR</th> <th>ACTRESS</th></tr> 
                         <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
                         <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
                         <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
@@ -57,7 +61,9 @@
                         <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
                         <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
                     </table>
+
                 </div>
+                
                 <div class="col-md-16 lastCalled" style="margin-left: 2rem">
                     <h2 style="float: left; color:black; margin-top: 2rem">Last 5 clues called:</h2>
                     <div class="list-group" style="width: 30rem">
@@ -97,13 +103,14 @@
                 text-align:left;
                 font-size:20px;
             }
-            /*.lastCalled{
-                background-image: url(https://i.imgur.com/leiByQ9.jpg);
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: center padding-bottom;
-                min-height: 55rem;
-            }*/
+            /*.lastCallednew{*/
+                /*float: left;*/
+                /*background-image: url(https://i.imgur.com/leiByQ9.jpg);*/
+                /*background-size: cover;*/
+                /*background-repeat: no-repeat;*/
+                /*background-position: center padding-bottom;*/
+                /*min-height: 55rem;*/
+            /*}*/
             .highlight{
                 border: solid 6px gold;
                 border-top: solid 6px gold !important;
@@ -146,6 +153,10 @@
                 border-collapse: collapse;
                 border: solid 1px #999;
             } 
+            th {
+                background-color: antiquewhite;
+                text-align: center !important;
+            }
             td {
                 min-width: 100px;
                 height: 3em;
@@ -155,11 +166,13 @@
                 text-align: center;
                 background-color: darkgrey;
                 color: #131A20;
+                max-width: 180px;
             } 
             td.selected {
                 color: burlywood;
                 font-weight: 600;
                 background-color: black;
+                max-width: 180px;
             } 
            @media only screen and (min-width: 1000px){
                 .container {
@@ -285,7 +298,7 @@
                 $("#mirageElement").css("display","none");
                 $('td').each(function() {
                     if (this.cellIndex === 0){
-                        var concatClass = this.cellIndex + "" + (this.parentNode.rowIndex + 1);
+                        var concatClass = this.cellIndex + "" + this.parentNode.rowIndex;
                         var numberString = parseInt(concatClass, 10);
                     }else {
                         var concatClass = parseInt(this.previousElementSibling.className.substring(4)) + 15;
