@@ -281,10 +281,10 @@
                              bingo.selectedNumbers = getStorage.map(Number)
                              console.log('lengthhh', bingo.selectedNumbers);
                         }
-                        if (bingo.selectedNumbers.length > 104) {
-                            alert("All numbers Exhausted");
-                            return 0;
-                        }
+                        // if (bingo.selectedNumbers.length > 104) {
+                        //     alert("All numbers Exhausted");
+                        //     return 0;
+                        // }
                         var random = bingo.generateRandom();
                         while ($.inArray(random, bingo.selectedNumbers) > -1) {
                             console.log('dup found');
