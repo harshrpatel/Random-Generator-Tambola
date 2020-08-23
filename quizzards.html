@@ -282,8 +282,8 @@
                         return random;
                     },
                     generateNextRandom: function() {
-                        if (window.localStorage.getItem('selected_countdown_names')){
-                             var getStorage = window.localStorage.getItem('selected_countdown_names').split(',');
+                        if (window.localStorage.getItem('selected_quizzards_names')){
+                             var getStorage = window.localStorage.getItem('selected_quizzards_names').split(',');
                              bingo.selectedNumbers = getStorage.map(Number)
                         }
                         if (bingo.selectedNumbers.length > 89) {
@@ -296,7 +296,7 @@
                             random = bingo.generateRandom();
                         }
                         bingo.selectedNumbers.push(random);
-                        window.localStorage.setItem('selected_countdown_names', bingo.selectedNumbers);
+                        window.localStorage.setItem('selected_quizzards_names', bingo.selectedNumbers);
                         document.getElementById("unique").innerHTML = 'Numbers called so far:' + ' ' + bingo.selectedNumbers.length;
                         return random;
                     }
@@ -312,8 +312,8 @@
                     }
                     $(this).addClass("cell" + numberString.toString()).text(bingoNumberWords[numberString]);
                 });
-                if (window.localStorage.getItem('selected_countdown_names')){
-                    var selectedArray = window.localStorage.getItem('selected_countdown_names').split(',');
+                if (window.localStorage.getItem('selected_quizzards_names')){
+                    var selectedArray = window.localStorage.getItem('selected_quizzards_names').split(',');
                     for (var i = 0; i < selectedArray.length; i++) {
                         $('td.cell' + selectedArray[i]).addClass('selected');
                     }
@@ -323,8 +323,8 @@
                 $('#btnReset').click(function() {
                     var r = confirm("Are you sure you want to reload the board ?");
                     if (r == true) {
-                        if (window.localStorage.getItem('selected_countdown_names')){
-                            window.localStorage.removeItem('selected_countdown_names');
+                        if (window.localStorage.getItem('selected_quizzards_names')){
+                            window.localStorage.removeItem('selected_quizzards_names');
                             location.reload();
                         }
                     }
