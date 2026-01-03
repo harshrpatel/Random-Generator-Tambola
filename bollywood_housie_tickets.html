@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Bollywood Housie - Make Your Ticket! 🎭</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(139, 0, 0, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(218, 165, 32, 0.2) 0%, transparent 50%),
+                radial-gradient(ellipse at center, #1a0a0a 0%, #3d1f1f 40%, #5c2e2e 70%, #8B4513 100%);
+            background-attachment: fixed;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(180deg, #1a0a0a 0%, #3d1f1f 100%);
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 5px solid #DAA520;
+            box-shadow: 0 8px 30px rgba(218, 165, 32, 0.5);
+        }
+
+        .header::before {
+            content: '🎬';
+            position: absolute;
+            font-size: 200px;
+            opacity: 0.1;
+            left: -50px;
+            top: -50px;
+            animation: rotate 20s linear infinite;
+        }
+
+        .header::after {
+            content: '🎭';
+            position: absolute;
+            font-size: 200px;
+            opacity: 0.1;
+            right: -50px;
+            bottom: -50px;
+            animation: rotate 20s linear infinite reverse;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        h1 {
+            font-size: 3.5em;
+            color: #DAA520;
+            text-shadow: 0 0 15px #DAA520, 0 0 30px #DAA520, 4px 4px 8px rgba(0, 0, 0, 0.9), 0 0 40px rgba(218, 165, 32, 0.5);
+            margin-bottom: 10px;
+            font-weight: 900;
+            position: relative;
+            z-index: 1;
+            letter-spacing: 4px;
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            color: white;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .instructions {
+            background: radial-gradient(ellipse at center, #2a1510 0%, #1a0a0a 100%);
+            color: white;
+            padding: 30px;
+            margin: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(218, 165, 32, 0.4), 0 10px 40px rgba(0, 0, 0, 0.6);
+            border: 3px solid #DAA520;
+        }
+
+        .instructions h2 {
+            font-size: 2em;
+            color: #DAA520;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 800;
+            text-shadow: 0 0 15px #DAA520, 2px 2px 6px rgba(0,0,0,0.8);
+        }
+
+        .instructions-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .instruction-box {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px solid #8B6914;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.3);
+        }
+
+        .instruction-box h3 {
+            color: #DAA520;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 800;
+            text-shadow: 0 0 10px rgba(218, 165, 32, 0.6);
+        }
+
+        .instruction-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .instruction-box li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            font-size: 1.05em;
+        }
+
+        .instruction-box li::before {
+            content: '⭐';
+            position: absolute;
+            left: 0;
+        }
+
+        .ticket-format {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            border: 3px dashed #DAA520;
+            box-shadow: inset 0 0 30px rgba(0,0,0,0.4);
+        }
+
+        .ticket-format h3 {
+            color: #DAA520;
+            text-align: center;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(218, 165, 32, 0.6);
+        }
+
+        .ticket-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 5px;
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .ticket-cell {
+            background: radial-gradient(ellipse at center, #FFD700 0%, #DAA520 50%, #B8860B 100%);
+            padding: 15px 5px;
+            text-align: center;
+            color: #1a0a0a;
+            font-weight: 800;
+            border-radius: 5px;
+            font-size: 0.8em;
+            border: 2px solid #8B6914;
+            text-shadow: 0 1px 2px rgba(255,255,255,0.3);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .categories-section {
+            padding: 30px;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .category-card {
+            background: radial-gradient(ellipse at center, #2a1510 0%, #1a0a0a 100%);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), inset 0 0 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+            break-inside: avoid;
+            border: 3px solid #8B6914;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 40px rgba(218, 165, 32, 0.6), 0 15px 50px rgba(0, 0, 0, 0.6);
+            border-color: #DAA520;
+        }
+
+        .category-header {
+            background: radial-gradient(ellipse at center, #DAA520 0%, #B8860B 100%);
+            padding: 15px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+            border: 2px solid #8B6914;
+            box-shadow: 0 0 15px rgba(218, 165, 32, 0.4), 0 4px 10px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.2);
+        }
+
+        .category-header h3 {
+            color: #1a0a0a;
+            font-size: 1.5em;
+            font-weight: 900;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3), 0 -1px 2px rgba(0,0,0,0.3);
+            letter-spacing: 1px;
+        }
+
+        .category-items {
+            list-style: none;
+            padding: 0;
+        }
+
+        .category-items li {
+            background: rgba(0, 0, 0, 0.4);
+            margin: 6px 0;
+            padding: 10px 12px;
+            border-radius: 8px;
+            color: #DAA520;
+            font-weight: 600;
+            font-size: 0.9em;
+            border-left: 4px solid #8B6914;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 5px rgba(218, 165, 32, 0.3);
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+        }
+
+        .category-items li:hover {
+            background: radial-gradient(ellipse at center, #3d2817 0%, #2a1510 100%);
+            transform: translateX(5px) scale(1.02);
+            color: #FFD700;
+            border-left-color: #DAA520;
+            box-shadow: 0 0 15px rgba(218, 165, 32, 0.4), 0 4px 10px rgba(0,0,0,0.4);
+        }
+
+        .footer {
+            background: linear-gradient(180deg, #3d1f1f 0%, #1a0a0a 100%);
+            padding: 20px;
+            text-align: center;
+            color: #DAA520;
+            font-size: 1.1em;
+            font-weight: 700;
+            border-top: 5px solid #DAA520;
+            text-shadow: 0 0 10px rgba(218, 165, 32, 0.5), 1px 1px 2px rgba(0,0,0,0.8);
+        }
+
+        .print-button {
+            background: radial-gradient(ellipse at center, #DAA520 0%, #B8860B 100%);
+            color: #1a0a0a;
+            border: 3px solid #8B6914;
+            padding: 18px 50px;
+            font-size: 1.3em;
+            font-weight: 900;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 0 25px rgba(218, 165, 32, 0.6), 0 8px 20px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255,255,255,0.3);
+            margin: 20px auto;
+            display: block;
+            transition: all 0.3s ease;
+            text-shadow: 0 1px 2px rgba(255,255,255,0.3);
+        }
+
+        .print-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 40px rgba(218, 165, 32, 0.9), 0 12px 35px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255,255,255,0.5);
+            background: radial-gradient(ellipse at center, #FFD700 0%, #DAA520 100%);
+        }
+
+        @media (max-width: 1024px) {
+            .categories-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .instructions-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+            .ticket-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .page-break {
+            page-break-after: always;
+            break-after: page;
+        }
+
+        @media print {
+            @page {
+                size: A4;
+                margin: 1cm;
+            }
+            
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+            
+            .print-button {
+                display: none;
+            }
+            
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+                max-width: 100%;
+                background: white;
+            }
+            
+            .header {
+                padding: 20px;
+                border-radius: 0;
+            }
+            
+            h1 {
+                font-size: 2.5em;
+            }
+            
+            .subtitle {
+                font-size: 1.2em;
+            }
+            
+            .instructions {
+                margin: 20px;
+                padding: 20px;
+                border-radius: 15px;
+            }
+            
+            .instructions h2 {
+                font-size: 1.8em;
+            }
+            
+            .categories-section {
+                padding: 20px;
+            }
+            
+            .categories-grid {
+                gap: 15px;
+                margin-top: 15px;
+            }
+            
+            .category-card {
+                padding: 15px;
+                box-shadow: none;
+                border: 2px solid #764ba2;
+            }
+            
+            .category-header {
+                padding: 10px;
+                margin-bottom: 12px;
+            }
+            
+            .category-header h3 {
+                font-size: 1.2em;
+            }
+            
+            .category-items li {
+                margin: 4px 0;
+                padding: 8px 10px;
+                font-size: 0.85em;
+            }
+            
+            .footer {
+                padding: 15px;
+                border-radius: 0;
+            }
+            
+            .category-card,
+            .instruction-box,
+            .instructions,
+            .header,
+            .footer,
+            .category-header,
+            .ticket-cell,
+            .category-items li {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header with Poster Image -->
+        <div class="header" style="padding: 40px 20px; text-align: center;">
+            <div style="display: inline-block; max-width: 600px; width: 100%; padding: 0 20px;">
+                <img src="poster.png" alt="The Housie of Bollywood" style="width: 100%; height: auto; border-radius: 15px; border: 5px solid #DAA520; box-shadow: 0 0 40px rgba(218, 165, 32, 0.6), 0 10px 40px rgba(0,0,0,0.8);">
+                <p class="subtitle" style="margin-top: 25px; font-size: 1.2em; color: #DAA520; text-shadow: 0 0 10px rgba(218, 165, 32, 0.6);">Complete Name List & Ticket Making Guide</p>
+            </div>
+        </div>
+        <style>
+            @keyframes pulse-ring {
+                0% { transform: scale(1); opacity: 0.3; }
+                50% { transform: scale(1.3); opacity: 0.1; }
+                100% { transform: scale(1); opacity: 0.3; }
+            }
+        </style>
+
+        <!-- Instructions -->
+        <div class="instructions">
+            <h2>📋 How to Make Your Ticket</h2>
+            
+            <div class="instructions-content">
+                <div class="instruction-box">
+                    <h3>🎯 Ticket Format</h3>
+                    <ul>
+                        <li>Your ticket will be a 6×5 grid</li>
+                        <li>Total of 30 names on each ticket</li>
+                        <li>Each column represents one category</li>
+                        <li>Pick 5 names from EACH category</li>
+                    </ul>
+                </div>
+
+                <div class="instruction-box">
+                    <h3>✨ Selection Rules</h3>
+                    <ul>
+                        <li>Choose 5 names from each of the 6 categories</li>
+                        <li>Write them in your ticket column-wise</li>
+                        <li>Each participant can have different names</li>
+                        <li>Make it unique and have fun!</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="ticket-format">
+                <h3>🎫 Your Ticket Should Look Like This:</h3>
+                <div class="ticket-grid">
+                    <div class="ticket-cell">Actors<br>Col 1</div>
+                    <div class="ticket-cell">Actresses<br>Col 2</div>
+                    <div class="ticket-cell">Movies<br>Col 3</div>
+                    <div class="ticket-cell">Kids<br>Col 4</div>
+                    <div class="ticket-cell">Couples<br>Col 5</div>
+                    <div class="ticket-cell">Villains<br>Col 6</div>
+                    <div class="ticket-cell">Name 1</div>
+                    <div class="ticket-cell">Name 1</div>
+                    <div class="ticket-cell">Name 1</div>
+                    <div class="ticket-cell">Name 1</div>
+                    <div class="ticket-cell">Name 1</div>
+                    <div class="ticket-cell">Name 1</div>
+                    <div class="ticket-cell">Name 2</div>
+                    <div class="ticket-cell">Name 2</div>
+                    <div class="ticket-cell">Name 2</div>
+                    <div class="ticket-cell">Name 2</div>
+                    <div class="ticket-cell">Name 2</div>
+                    <div class="ticket-cell">Name 2</div>
+                    <div class="ticket-cell">Name 3</div>
+                    <div class="ticket-cell">Name 3</div>
+                    <div class="ticket-cell">Name 3</div>
+                    <div class="ticket-cell">Name 3</div>
+                    <div class="ticket-cell">Name 3</div>
+                    <div class="ticket-cell">Name 3</div>
+                    <div class="ticket-cell">Name 4</div>
+                    <div class="ticket-cell">Name 4</div>
+                    <div class="ticket-cell">Name 4</div>
+                    <div class="ticket-cell">Name 4</div>
+                    <div class="ticket-cell">Name 4</div>
+                    <div class="ticket-cell">Name 4</div>
+                    <div class="ticket-cell">Name 5</div>
+                    <div class="ticket-cell">Name 5</div>
+                    <div class="ticket-cell">Name 5</div>
+                    <div class="ticket-cell">Name 5</div>
+                    <div class="ticket-cell">Name 5</div>
+                    <div class="ticket-cell">Name 5</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <button class="print-button" onclick="window.print()">🖨️ Print This Page</button>
+
+        <!-- Categories Section -->
+        <div class="header" style="padding: 30px 20px;">
+            <h1 style="font-size: 2.8em;">📋 Category Names List</h1>
+            <p class="subtitle">Choose 5 names from each category below</p>
+        </div>
+        <div class="categories-section">
+            <div class="categories-grid">
+                <!-- Bollywood Actors -->
+                <div class="category-card">
+                    <div class="category-header">
+                        <h3>🎭 Bollywood Actors</h3>
+                    </div>
+                    <ul class="category-items">
+                        <li>Shah Rukh Khan</li>
+                        <li>Salman Khan</li>
+                        <li>Aamir Khan</li>
+                        <li>Amitabh Bachchan</li>
+                        <li>Ranbir Kapoor</li>
+                        <li>Ranveer Singh</li>
+                        <li>Hrithik Roshan</li>
+                        <li>Akshay Kumar</li>
+                        <li>Ajay Devgn</li>
+                        <li>Shahid Kapoor</li>
+                        <li>Saif Ali Khan</li>
+                        <li>Sunny Deol</li>
+                        <li>Kartik Aaryan</li>
+                        <li>Vicky Kaushal</li>
+                        <li>Varun Dhawan</li>
+                    </ul>
+                </div>
+
+                <!-- Bollywood Actresses -->
+                <div class="category-card">
+                    <div class="category-header">
+                        <h3>👗 Bollywood Actresses</h3>
+                    </div>
+                    <ul class="category-items">
+                        <li>Deepika Padukone</li>
+                        <li>Alia Bhatt</li>
+                        <li>Kareena Kapoor Khan</li>
+                        <li>Katrina Kaif</li>
+                        <li>Priyanka Chopra</li>
+                        <li>Madhuri Dixit</li>
+                        <li>Kajol</li>
+                        <li>Rani Mukerji</li>
+                        <li>Vidya Balan</li>
+                        <li>Anushka Sharma</li>
+                        <li>Kiara Advani</li>
+                        <li>Aishwarya Rai</li>
+                        <li>Sonam Kapoor</li>
+                        <li>Shraddha Kapoor</li>
+                        <li>Taapsee Pannu</li>
+                    </ul>
+                </div>
+
+                <!-- Superhit Movies -->
+                <div class="category-card">
+                    <div class="category-header">
+                        <h3>🎬 Superhit Movies</h3>
+                    </div>
+                    <ul class="category-items">
+                        <li>Sholay</li>
+                        <li>Dilwale Dulhania Le Jayenge</li>
+                        <li>Kabhi Khushi Kabhi Gham</li>
+                        <li>Lagaan</li>
+                        <li>Three Idiots</li>
+                        <li>Dangal</li>
+                        <li>Bajrangi Bhaijaan</li>
+                        <li>Chennai Express</li>
+                        <li>PK</li>
+                        <li>Andaz Apna Apna</li>
+                        <li>Gadar</li>
+                        <li>Uri The Surgical Strike</li>
+                        <li>Pathaan</li>
+                        <li>Sultan</li>
+                        <li>Om Shanti Om</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- Page 3: Remaining Categories -->
+        <div class="header" style="padding: 30px 20px;">
+            <h1 style="font-size: 2.8em;">📋 Category Names List (Continued)</h1>
+            <p class="subtitle">Choose 5 names from each category below</p>
+        </div>
+
+        <div class="categories-section">
+            <div class="categories-grid">
+                <!-- Kids Movies -->
+                <div class="category-card">
+                    <div class="category-header">
+                        <h3>🧒 Kids Movies</h3>
+                    </div>
+                    <ul class="category-items">
+                        <li>Taare Zameen Par</li>
+                        <li>Chillar Party</li>
+                        <li>Bhoothnath</li>
+                        <li>Iqbal</li>
+                        <li>Koi Mil Gaya</li>
+                        <li>Stanley Ka Dabba</li>
+                        <li>Makdee</li>
+                        <li>Chain Kulii Ki Main Kulii</li>
+                        <li>My Friend Ganesha</li>
+                        <li>Bhoothnath Returns</li>
+                        <li>Bhoot Uncle</li>
+                        <li>Aamir</li>
+                        <li>Dhobi Ghat</li>
+                        <li>Lion King Hindi Version</li>
+                        <li>Hanuman Animated Movie</li>
+                    </ul>
+                </div>
+
+                <!-- Famous Couples -->
+                <div class="category-card">
+                    <div class="category-header">
+                        <h3>💑 Famous Couples</h3>
+                    </div>
+                    <ul class="category-items">
+                        <li>Raj and Simran</li>
+                        <li>Rahul and Anjali</li>
+                        <li>Prem and Nisha</li>
+                        <li>Veer and Zara</li>
+                        <li>Aman and Naina</li>
+                        <li>Aditya and Geet</li>
+                        <li>Bunny and Naina</li>
+                        <li>Kabir and Preeti</li>
+                        <li>Rohit and Sonia</li>
+                        <li>Bajrangi and Munni</li>
+                        <li>Munna and Circuit</li>
+                        <li>Prem and Preeti</li>
+                        <li>Akash and Tara</li>
+                        <li>Rocky and Rani</li>
+                        <li>Rohan and Pooja</li>
+                    </ul>
+                </div>
+
+                <!-- Villains and Comics -->
+                <div class="category-card">
+                    <div class="category-header">
+                        <h3>😈 Villains & Comics</h3>
+                    </div>
+                    <ul class="category-items">
+                        <li>Gabbar Singh</li>
+                        <li>Mogambo</li>
+                        <li>Crime Master Gogo</li>
+                        <li>Shakaal</li>
+                        <li>Kancha Cheena</li>
+                        <li>Baburao</li>
+                        <li>Johnny Lever</li>
+                        <li>Circuit</li>
+                        <li>Pran</li>
+                        <li>Amjad Khan</li>
+                        <li>Nana Patekar</li>
+                        <li>Ashutosh Rana</li>
+                        <li>Anupam Kher</li>
+                        <li>Rajpal Yadav</li>
+                        <li>Jagdeep</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>🎉 Get Ready for the Ultimate Bollywood Housie Experience! 🎉</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">Developed by: Harsh & Aayushi</p>
+        </div>
+    </div>
+</body>
+</html>
