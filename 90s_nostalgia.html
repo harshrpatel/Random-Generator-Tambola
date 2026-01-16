@@ -1,0 +1,479 @@
+<html> 
+    <head>
+        <title>
+             📼🎮 90s Nostalgia Housie 🕹️📺
+        </title> 
+        <link rel='icon' href='bolly.ico' type='image/x-icon'/ >
+        <meta property="og:title" content="Random Sequence Generator - 90s Nostalgia" />  
+        <meta property="og:type" content="webpage" />
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> 
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:locale" content="en_US" />
+    </head>
+    <body>  
+        <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" style="background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%); border: none; border-bottom: 3px solid #FFD700; box-shadow: 0 8px 30px rgba(255, 215, 0, 0.4);">
+            <div style="position: absolute; top: 0; left: 0; right: 0; height: 100%; background: repeating-linear-gradient(90deg, transparent 0px, transparent 40px, rgba(255, 215, 0, 0.1) 40px, rgba(255, 215, 0, 0.1) 50px); pointer-events: none;"></div>
+          <div class="container">
+            <div style="position: relative;">
+                <h1 style="color:#FFD700; text-shadow: 0 0 10px #FFD700, 0 0 20px rgba(255, 215, 0, 0.5), 3px 3px 6px rgba(0,0,0,0.9); font-weight: 900; letter-spacing: 3px; position: relative; z-index: 1;">📼 THE HOUSIE 🎮<br><span style="font-size: 0.7em; color: #DC143C; text-shadow: 0 0 10px rgba(220, 20, 60, 0.8), 2px 2px 4px rgba(0,0,0,0.8);">of 90s NOSTALGIA</span></h1>
+            </div>
+          </div>
+        </nav>
+        <div class="container" > 
+            <div class="bigNumberDisplay well well-lg" style="margin-top: 2rem; background: radial-gradient(ellipse at center, #2a2a2a 0%, #0a0a0a 100%); border: solid 5px #FFD700; box-shadow: 0 0 30px rgba(255, 215, 0, 0.5), 0 12px 40px rgba(0,0,0,0.8), inset 0 0 50px rgba(0,0,0,0.5); position: relative; overflow: hidden;">
+                <div style="position: absolute; top: -20px; left: -20px; font-size: 120px; opacity: 0.05; transform: rotate(-15deg); color: #FFD700;">📼</div>
+                <div style="position: absolute; bottom: -20px; right: -20px; font-size: 120px; opacity: 0.05; transform: rotate(15deg); color: #DC143C;">🎮</div>
+                <div style="position: absolute; top: 10px; left: 10px; width: 15px; height: 15px; border-radius: 50%; background: radial-gradient(circle, #FFD700, transparent); animation: sparkle 2s infinite;"></div>
+                <div style="position: absolute; top: 30px; right: 50px; width: 10px; height: 10px; border-radius: 50%; background: radial-gradient(circle, #DC143C, transparent); animation: sparkle 3s infinite 0.5s;"></div>
+                <div style="position: absolute; bottom: 40px; left: 60px; width: 12px; height: 12px; border-radius: 50%; background: radial-gradient(circle, #FFD700, transparent); animation: sparkle 2.5s infinite 1s;"></div>
+                 <h3 style="color:#FFD700; font-weight: bold; text-shadow: 0 0 10px rgba(255, 215, 0, 0.8), 0 0 20px rgba(255, 215, 0, 0.5), 2px 2px 8px rgba(0,0,0,0.9); position: relative; z-index: 1;" id="heading">✨ Click below to reveal! ✨</h3>
+                <span class="mirage" id="mirageElement">19</span>
+                <div class="bingoNumberDesc" id="bingoWords" style="position: relative; z-index: 1;"></div>
+            </div>
+            <div>
+                <input id="btnGenerate" type="button"  style="background: linear-gradient(180deg, #FFD700 0%, #FFA500 50%, #FF8C00 100%); color: #000; font-weight: 900; border: 3px solid #FFA500; box-shadow: 0 0 20px rgba(255, 215, 0, 0.6), 0 8px 16px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.3); text-shadow: 1px 1px 2px rgba(0,0,0,0.3); font-size: 1.2em; padding: 15px 40px; border-radius: 10px;" class="btn btn-primary btn-lg" value="📼 REVEAL ITEM 🎮"/>
+            </div> 
+            <br/> 
+            <div class="row" >
+                <div class="col-md-16"> 
+                    <table class="table table-striped table-responsive" id="mainTable">
+                        <tr class="header-row">
+                            <td class="category-header">🍬 90s Food & Treats</td>
+                            <td class="category-header">🏠 90s Household Brands</td>
+                            <td class="category-header">🎲 90s Toys & Collectibles</td>
+                            <td class="category-header">📺 90s TV Shows</td>
+                            <td class="category-header">🎮 90s Games & Video Games</td>
+                            <td class="category-header">📚 90s Childhood Classics</td>
+                        </tr>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+                        <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+                    </table>
+                </div>
+                <div class="col-md-12" style="margin-top: 2rem;">
+                    <h2 style="text-align: center; color: #FFD700; text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);">Last 5 items called:</h2>
+                    <div class="list-group" style="max-width: 40rem; margin: 0 auto;">
+                        <button id ="lastCall0" type="button" class="list-group-item"></button>
+                        <button id ="lastCall1" type="button" class="list-group-item"></button>
+                        <button id ="lastCall2" type="button" class="list-group-item"></button>
+                        <button id ="lastCall3" type="button" class="list-group-item"></button>
+                        <button id ="lastCall4" type="button" class="list-group-item"></button>
+                    </div>
+                </div>
+            <div>
+                <input id="btnReset" type="button"  style="background-color: darkred; color: #fff; margin-top: 2rem; font-weight: 700" class="btn btn-primary btn-lg" value="RESET BOARD"/>
+                </div> 
+            </div> 
+            <br/> 
+        </div>
+        <div>
+        <footer>
+        <p>Developed by: Harsh & Aayushi</p>
+        </footer>
+        </div> 
+        <style type="text/css">
+            body { 
+                padding-top: 70px;
+                background: 
+                    radial-gradient(circle at 20% 50%, rgba(220, 20, 60, 0.2) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 50%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
+                    radial-gradient(ellipse at center, #000000 0%, #1a1a1a 40%, #0a0a0a 70%, #000000 100%);
+                background-attachment: fixed;
+            }
+            .highlight{
+                border: solid 6px #FFD700 !important;
+                border-top: solid 6px #FFD700 !important;
+                color: #000 !important;
+                animation: nostalgia-pulse 1.5s infinite;
+                position: relative;
+            }
+            .highlight::before {
+                content: '⭐';
+                position: absolute;
+                top: 5px;
+                right: 5px;
+                font-size: 1.5em;
+                color: #DC143C;
+                filter: drop-shadow(0 0 5px #DC143C);
+                animation: spin 3s linear infinite;
+            }
+            @keyframes nostalgia-pulse {
+                0%, 100% { 
+                    box-shadow: 0 0 30px rgba(255, 215, 0, 0.9), 0 0 50px rgba(255, 215, 0, 0.6);
+                    transform: scale(1);
+                }
+                50% { 
+                    box-shadow: 0 0 50px rgba(255, 215, 0, 1), 0 0 80px rgba(255, 215, 0, 0.8);
+                    transform: scale(1.05);
+                }
+            }
+            @keyframes spin {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+            }
+            @keyframes sparkle {
+                0%, 100% { opacity: 0; transform: scale(0); }
+                50% { opacity: 1; transform: scale(1); }
+            }
+            .bingoNumberDesc{
+                font-size:0.3em;
+                vertical-align: text-top;
+                color: #FFD700;
+                font-weight: 800;
+                text-shadow: 0 0 15px rgba(255, 215, 0, 0.8), 0 0 30px rgba(255, 215, 0, 0.5), 2px 2px 6px rgba(0,0,0,0.9);
+            }
+            button.list-group-item:hover {
+              background: radial-gradient(ellipse at center, #2a2a2a 0%, #1a1a1a 100%) !important;
+              transform: scale(1.05);
+              transition: all 0.3s ease;
+              box-shadow: 0 0 20px rgba(255, 215, 0, 0.5), 0 8px 16px rgba(0,0,0,0.6);
+              border-color: #FFD700 !important;
+            }
+           div {
+                text-align: center;
+            } 
+            .bigNumberDisplay {
+                font-size: 8em;
+            } 
+            .category-header {
+                background: linear-gradient(135deg, #DC143C 0%, #8B0000 100%) !important;
+                color: #FFD700 !important;
+                font-weight: 900 !important;
+                font-size: 1.2em !important;
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
+                padding: 15px !important;
+                border: 2px solid #FFD700 !important;
+            }
+            .list-group-item {
+                background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+                color: #FFD700 !important;
+                border: 2px solid #333;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.5), inset 0 0 20px rgba(0,0,0,0.3);
+                font-size: 1.5em;
+                padding-bottom: 2em;
+                height: 4rem;
+                border: 1px solid #FFD700;
+                font-weight: 600;
+            }
+            table {
+                margin-left: auto;
+                margin-right: auto;
+            } 
+            table, tr, td {
+                border-collapse: collapse;
+                border: solid 1px #999;
+            } 
+            td {
+                min-width: 100px;
+                height: 3em;
+                font-size: 1.1em;
+                padding: 10px !important;
+                vertical-align: middle !important;
+                text-align: center;
+                background: radial-gradient(ellipse at center, #2a2a2a 0%, #0a0a0a 100%);
+                color: #fff;
+                font-weight: 600;
+                border: 1px solid #333 !important;
+                text-shadow: 0 0 5px rgba(0, 0, 0, 0.8), 1px 1px 2px rgba(0,0,0,0.8);
+                box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+            }
+            td.selected {
+                color: #000;
+                font-weight: 900;
+                background: radial-gradient(ellipse at center, #FFD700 0%, #FFA500 50%, #FF8C00 100%);
+                box-shadow: 
+                    inset 0 1px 0 rgba(255,255,255,0.3),
+                    inset 0 -1px 0 rgba(0,0,0,0.3),
+                    0 0 30px rgba(255, 215, 0, 0.9), 
+                    0 0 50px rgba(255, 215, 0, 0.6),
+                    inset 0 0 20px rgba(255, 215, 0, 0.3);
+                border: 2px solid #FFD700 !important;
+                animation: nostalgia-glow 2s infinite;
+                text-shadow: 0 1px 2px rgba(255,255,255,0.5), 0 -1px 2px rgba(0,0,0,0.3);
+            }
+            @keyframes nostalgia-glow {
+                0%, 100% { 
+                    box-shadow: 
+                        inset 0 1px 0 rgba(255,255,255,0.3),
+                        0 0 30px rgba(255, 215, 0, 0.9), 
+                        0 0 50px rgba(255, 215, 0, 0.6),
+                        inset 0 0 20px rgba(255, 215, 0, 0.3);
+                }
+                50% { 
+                    box-shadow: 
+                        inset 0 1px 0 rgba(255,255,255,0.5),
+                        0 0 40px rgba(255, 215, 0, 1), 
+                        0 0 70px rgba(255, 215, 0, 0.8),
+                        inset 0 0 30px rgba(255, 215, 0, 0.4);
+                }
+            }
+            footer {
+                text-align: center;
+                padding: 2rem;
+                color: #FFD700;
+                font-weight: 600;
+            }
+            @media (min-width: 1000px){
+                .container {
+                    width: 1400px !important;
+                }
+            }
+        </style> 
+        <script
+          src="https://code.jquery.com/jquery-3.2.1.min.js"
+          integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+          crossorigin="anonymous"></script>
+        <script type="text/javascript">
+        // 90s Nostalgia data organized by categories
+        var categories = {
+            "90s Food & Treats": [
+                "Rasna", "Roohafza", "Pan Pasand", "Swad", "Fusen Gum", "Boomer", 
+                "Big Babool", "Coffee Bite", "Melody", "Milo", "Phantom Cigarettes", 
+                "Complan", "Gems", "Uncle Chips", "Piknik"
+            ],
+            "90s Household Brands": [
+                "Liril", "Maggi", "Goldspot", "Magic Pops", "Apsara Pencils", "Natraj", 
+                "Camlin Ink", "Parker Pen", "Milton Bottle", "Hajmola", "Chicklets", 
+                "Poppins", "Nutties", "Kismi", "Frooti"
+            ],
+            "90s Toys & Collectibles": [
+                "Tazos", "Beyblades", "WWF Cards", "Hot Wheels", "Marbles", "Carrom", 
+                "Snakes and Ladders", "Ludo", "Pokemon", "Paper Boats", "Post Cards", 
+                "Spinning Top", "Brick Game", "Pinball", "Stop and Patti"
+            ],
+            "90s TV Shows": [
+                "Chitrahaar", "Ramayan", "Mahabharat", "Dekh Bhai Dekh", "Tu Tu Main Main", 
+                "Hum Paanch", "Shriman Shrimati", "Office Office", "Alif Laila", "Shaktimaan", 
+                "Malgudi Days", "Circus", "Shakalaka Boom Boom", "Boogie Woogie", "Hip Hip Hurray"
+            ],
+            "90s Games & Video Games": [
+                "Super Mario", "Contra", "Donkey Kong", "Bomber Man", "Duck Hunt", "Road Rash", 
+                "Tetris", "Lode Runner", "Jungle Book", "Ice Climber", "The Legend of the Hidden Temple", 
+                "Takeshi's Castle", "Nadi Ke Parvat", "Chuti Sagar Bhegi Sagar", "Satoliyo"
+            ],
+            "90s Childhood Classics": [
+                "Amar Chitra Katha", "Tinkle", "Champak", "Archies Comics", "Walkman", 
+                "Ladybird", "Hero Cycles", "Ubhi Kho Bethi Kho", "Gilli Danda", "Tom and Jerry", 
+                "Dragonball Z", "Chacha Choudhary", "Powerpuff Girls", "Cassette Tapes", "Cotton Candy"
+            ]
+        };
+
+        // Create a flat array with category info for each item
+        var allItems = [];
+        var itemIndex = 0;
+        for (var categoryName in categories) {
+            var categoryItems = categories[categoryName];
+            for (var i = 0; i < categoryItems.length; i++) {
+                allItems.push({
+                    id: itemIndex,
+                    name: categoryItems[i],
+                    category: categoryName,
+                    categoryIndex: Object.keys(categories).indexOf(categoryName)
+                });
+                itemIndex++;
+            }
+        }
+
+        var last5call = [];
+        (function($){
+            $.fn.extend({
+                numAnim: function(options) {
+                    if ( ! this.length)
+                        return false;
+
+                    this.defaults = {
+                        endAt: 2560,
+                        numClass: 'autogen-num',
+                        duration: 1,
+                        interval: 60
+                    };
+                    var settings = $.extend({}, this.defaults, options);
+
+                    var $num = $('<span/>', {
+                        'class': settings.numClass 
+                    });
+
+                    return this.each(function() {
+                        var $this = $(this);
+
+                        var frag = document.createDocumentFragment(),
+                            numLen = settings.endAt.toString().length;
+                        for (x = 0; x < numLen; x++) {
+                            var rand_num = Math.floor( Math.random() * 10 );
+                            frag.appendChild( $num.clone().text(rand_num)[0] )
+                        }
+                        $this.empty().append(frag);
+
+                        var get_next_num = function(num) {
+                            ++num;
+                            if (num > 9) return 0;
+                            return num;
+                        };
+
+                        $this.find('.' + settings.numClass).each(function() {
+                            var $num = $(this),
+                                num = parseInt( $num.text() );
+
+                            var interval = setInterval( function() {
+                                num = get_next_num(num);
+                                $num.text(num);
+                            }, settings.interval);
+
+                            setTimeout( function() {
+                                clearInterval(interval);
+                            }, settings.duration * 300 - settings.interval);
+                        });
+                        
+                        setTimeout( function() {
+                            $this.text( settings.endAt.toString() );
+                            $("#mirageElement").css("display","none");
+                            $('#numCounter').css("display","");  
+
+                        }, settings.duration * 300);
+                    });
+                }
+            });
+        })(jQuery);
+
+            $(function() { 
+            var nostalgia = {
+                selectedItems: [],
+                generateRandom: function() {
+                    var min = 0;
+                    var max = allItems.length - 1;
+                    var random = Math.floor(Math.random() * (max - min + 1)) + min;
+                    return random;
+                },
+                generateNextRandom: function() {
+                    if (window.localStorage.getItem('selected_90s_items')){
+                         var getStorage = window.localStorage.getItem('selected_90s_items').split(',');
+                         nostalgia.selectedItems = getStorage.map(Number);
+                    }
+                    if (nostalgia.selectedItems.length >= allItems.length) {
+                        alert("All items Exhausted!");
+                        return -1;
+                    }
+                    var random = nostalgia.generateRandom();
+                    while ($.inArray(random, nostalgia.selectedItems) > -1) {
+                        random = nostalgia.generateRandom();
+                    }
+                    nostalgia.selectedItems.push(random);
+                    window.localStorage.setItem('selected_90s_items', nostalgia.selectedItems);
+                    return random;
+                }
+            };
+
+            $("#mirageElement").css("display","none");
+            
+            // Populate the single table with all items (6 columns x 15 rows)
+            var categoryNames = Object.keys(categories);
+            
+            // Loop through rows (15 items per category)
+            for (var row = 0; row < 15; row++) {
+                for (var col = 0; col < 6; col++) {
+                    var categoryName = categoryNames[col];
+                    var categoryItems = categories[categoryName];
+                    
+                    if (row < categoryItems.length) {
+                        var itemName = categoryItems[row];
+                        var itemId = allItems.findIndex(item => 
+                            item.name === itemName && item.category === categoryName
+                        );
+                        
+                        // row+1 because first row is headers
+                        var cell = $('#mainTable tr').eq(row + 1).find('td').eq(col);
+                        cell.addClass("cell" + itemId).text(itemName);
+                    }
+                }
+            }
+
+            // Restore selected items from localStorage
+            if (window.localStorage.getItem('selected_90s_items')){
+                var selectedArray = window.localStorage.getItem('selected_90s_items').split(',');
+                for (var i = 0; i < selectedArray.length; i++) {
+                    $('td.cell' + selectedArray[i]).addClass('selected');
+                }
+            }
+
+            var random = 0;
+            var animDuration = 1;
+            
+            $('#btnReset').click(function() {
+                var r = confirm("Are you sure you want to reload the board?");
+                if (r == true) {
+                    if (window.localStorage.getItem('selected_90s_items')){
+                        window.localStorage.removeItem('selected_90s_items');
+                        location.reload();
+                    }
+                }
+            });
+
+            $('#btnGenerate').click(function() {    
+                $("#bingoWords").text("");
+                var elems = document.querySelectorAll(".highlight");
+                [].forEach.call(elems, function(el) {
+                    el.classList.remove("highlight");
+                });
+                
+                random = nostalgia.generateNextRandom();
+                if (random === -1) return;
+                
+                var selectedItem = allItems[random];
+                
+                if(last5call.length == 5){
+                    last5call.pop();
+                    last5call.unshift(selectedItem.category + ": " + selectedItem.name);
+                } else{
+                    last5call.unshift(selectedItem.category + ": " + selectedItem.name);
+                }
+                
+                for (var i = 0; i <= last5call.length; i++) {
+                    if (last5call[i]){
+                        document.getElementById("lastCall" + i).innerHTML = (i+1) + ') ' + last5call[i];
+                    }
+                }
+                
+                $("#numCounter").css("display","none");
+                $("#mirageElement").css("display","");
+                $("#heading").text("✨ Rewind Time! ✨");
+                
+                $("#mirageElement").numAnim({
+                    endAt: allItems.length,
+                    duration: animDuration
+                });
+                
+                setTimeout(function(){ 
+                    $('td.cell' + random).addClass('selected highlight');
+                    $("#heading").text("");
+                    $("#bingoWords").text(selectedItem.category + ": " + selectedItem.name);
+
+                }, animDuration*300);
+
+            });
+            
+            window.onbeforeunload = function(e) {
+                e = e || window.event;
+                var returnString = 'Are you sure?';
+                if (e) {
+                    e.returnValue = returnString;
+                }
+                return returnString;
+            };
+        });
+        </script> 
+    </body>
+</html>
