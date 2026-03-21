@@ -295,8 +295,8 @@
                     padding-top: 100px;
                 }
                 .main-container {
-                    padding-left: 8px;
-                    padding-right: 8px;
+                    padding-left: 4px;
+                    padding-right: 4px;
                 }
                 .navbar h1 {
                     font-size: 1.2em !important;
@@ -332,19 +332,28 @@
                     width: 70% !important;
                     max-width: 250px;
                 }
+                .table-scroll-wrapper {
+                    overflow-x: hidden;
+                }
                 table {
-                    min-width: 600px;
+                    width: 100% !important;
+                    table-layout: fixed;
                 }
                 td {
-                    min-width: 70px !important;
-                    font-size: 0.7em !important;
-                    padding: 5px 3px !important;
-                    height: 2.5em !important;
+                    min-width: 0 !important;
+                    width: 16.66% !important;
+                    font-size: 0.55em !important;
+                    padding: 4px 2px !important;
+                    height: auto !important;
+                    word-wrap: break-word;
+                    overflow-wrap: break-word;
+                    hyphens: auto;
                 }
                 .category-header {
-                    font-size: 0.7em !important;
-                    padding: 8px 3px !important;
-                    min-width: 70px !important;
+                    font-size: 0.5em !important;
+                    padding: 6px 2px !important;
+                    min-width: 0 !important;
+                    line-height: 1.2 !important;
                 }
                 .last5-heading {
                     font-size: 1.2em !important;
@@ -356,6 +365,10 @@
                     font-size: 0.85em !important;
                     padding: 10px 8px !important;
                     min-height: auto !important;
+                }
+                .col-xs-12 {
+                    padding-left: 4px;
+                    padding-right: 4px;
                 }
             }
             /* Tablets */
@@ -375,16 +388,20 @@
                     font-size: 0.4em !important;
                 }
                 table {
-                    min-width: 650px;
+                    width: 100% !important;
+                    table-layout: fixed;
                 }
                 td {
-                    min-width: 80px !important;
-                    font-size: 0.85em !important;
-                    padding: 6px !important;
+                    min-width: 0 !important;
+                    font-size: 0.75em !important;
+                    padding: 5px 3px !important;
+                    word-wrap: break-word;
+                    overflow-wrap: break-word;
                 }
                 .category-header {
-                    font-size: 0.85em !important;
-                    padding: 10px 5px !important;
+                    font-size: 0.7em !important;
+                    padding: 8px 3px !important;
+                    min-width: 0 !important;
                 }
                 .list-group-item {
                     font-size: 1.1em !important;
